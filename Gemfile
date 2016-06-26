@@ -32,6 +32,9 @@ gem "d3-rails"
 # Using the paperclip gem to add photos to profiles
 gem "paperclip"
 
+# koudoku --> for subscriptions
+gem "koudoku"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
