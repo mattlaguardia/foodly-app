@@ -27,6 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 # Use require d3 in app/assets/javascripts/application.js
+# https://github.com/iblue/d3-rails
 gem "d3-rails"
 
 # Using the paperclip gem to add photos to profiles
@@ -34,6 +35,12 @@ gem "paperclip"
 
 # koudoku --> for subscriptions
 gem "koudoku"
+
+# Devise for authentication -- allows multiple user types to be logged in
+# https://github.com/plataformatec/devise
+# After install -- rails generate devise:install
+# rails generate devise MODEL -- MODEL is our model's name that will be using devise methods ex: User
+gem "devise"
 
 # Use Unicorn as the app server
 # gem 'unicorn'
