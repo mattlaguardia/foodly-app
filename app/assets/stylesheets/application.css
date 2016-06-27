@@ -17,6 +17,18 @@
 nav {
   background-color: #1D374F;
 }
+input#username {
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+}
+input#password {
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+}
+.alert {
+  background-color: rgba(250, 74, 74, 0.9);
+  color: white;
+}
 #login-form {
   color: white;
   position: absolute;
