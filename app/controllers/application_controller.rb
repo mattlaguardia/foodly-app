@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   add_flash_types :success, :error
 
-  include SessionHelper
+  include SessionsHelper
 
     def current_user
       if session[:user_id]
