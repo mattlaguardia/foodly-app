@@ -3,4 +3,13 @@ class User < ActiveRecord::Base
 
 	has_many :restaurants
 
+	BCrypt::Engine.cost = 12
+	has_secure_password
+
+	def self.confirm(email, password)
+		user = User.find_by_email(email)
+		user.authenticate(password)
+	end
+
+
 end
