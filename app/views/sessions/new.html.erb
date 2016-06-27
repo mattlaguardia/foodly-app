@@ -1,10 +1,16 @@
-<div class="container" id="login-form">
-  <h1>Login</h1>
-  <%= form_tag "/login", method: "post" do %>
-    <h3>Username:</h3><br>
-    <%= text_field_tag :username, nil, required: true %><br>
-    <h3>Password:</h3>
-    <%= password_field_tag :password, nil, required: true %><br>
-    <%= submit_tag "Login" %>
-  <% end %>
+<div class="parallax-container">
+  <div class="parallax" id="login-bg-image"></div>
+</div>
+<div class="container row" id="login-form">
+  <div class="col s8" id="login-form-bg">
+    <h4>Login</h4>
+    <%= form_tag "/login", method: "post" do %>
+      <h6>Username:</h6><br>
+      <%= text_field_tag :username, nil, required: true %><br>
+      <h6>Password:</h6>
+      <%= password_field_tag :password, nil, required: true %><br>
+      <%= submit_tag " Login  ", class: "btn z-depth-0", id: "login-submit" %>
+      <%= link_to "Sign Up", { :action => "new" }, :method => :get, :class => "btn z-depth-0", id: "signup" %>
+    <% end %>
+  </div>
 </div>
