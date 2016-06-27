@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_email(params[:email])
+    user = User.find_by_username(params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to user
+      redirect_to "/restaurants"
     else
       redirect_to "/login", flash: { error: "There was a problem logging you in."}
     end
