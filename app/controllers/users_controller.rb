@@ -26,7 +26,11 @@ class UsersController < ApplicationController
 
 	def show
 		@user=User.find(params[:id])
-		render :show
+		if current_user != User.find(params[:id])
+			redirect_to root_path, flash: {error: "Your not authorized to view that page!"}
+		else
+			render :show
+		end
 	end
 
 	def update
