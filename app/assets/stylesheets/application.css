@@ -25,6 +25,9 @@ input#password {
   border: 1px solid #ffffff;
   border-radius: 2px;
 }
+.parallax-container {
+  height: 800px;
+}
 .alert {
   background-color: rgba(250, 74, 74, 0.9);
   color: white;
