@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to user
     else
-      redirect_to "/index", flash: { error: "There was a problem logging you in."}
+      redirect_to "/login", flash: { error: "There was a problem logging you in."}
     end
   end
 
