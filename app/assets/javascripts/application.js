@@ -15,3 +15,8 @@
 //= require turbolinks
 //= require_tree .
 //= require d3
+//= require jquery
+
+$(document).ready(function(){
+  $(".button-collapse").sideNav();
+})
