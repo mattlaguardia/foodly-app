@@ -36,6 +36,9 @@ gem "paperclip"
 # koudoku --> for subscriptions
 gem "koudoku"
 
+# materialize gem - Sass
+# gem 'materialize-sass'
+
 # Devise for authentication -- allows multiple user types to be logged in
 # https://github.com/plataformatec/devise
 # After install -- rails generate devise:install
