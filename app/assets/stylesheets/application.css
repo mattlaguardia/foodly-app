@@ -28,6 +28,7 @@ input#password {
 .alert {
   background-color: rgba(250, 74, 74, 0.9);
   color: white;
+  font-size: 20px;
 }
 #login-form {
   color: white;
