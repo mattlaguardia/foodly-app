@@ -1,4 +1,4 @@
-User Signup!
+User Edit!
 
 <%= form_for @user do |f| %>
 
@@ -27,7 +27,11 @@ User Signup!
 </div>
 
 <div>
-<%= f.submit "Sign up", :class => "button" %>
+<%= f.submit "Edit User Info", :class => "button" %>
+</div>
+
+<div>
+  <%= button_to "Delete User", new_user_path, method: :delete %>
 </div>
 
 <% end %>
