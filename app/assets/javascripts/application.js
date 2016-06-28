@@ -23,4 +23,19 @@ $(document).ready(function(){
   $(".like-button").click(function(){
     $(this).parent().hide();
   })
+  $.getJSON('http://ipinfo.io', function(data){
+    var location = data.loc;
+    var coor = location.split(',');
+    var lat = coor[0];
+    var lon = coor[1];
+    return lat, lon;
+    })
+    // function googleLocation(lat, lon){
+    //   console.log(lat, lon);
+    //   $.ajax({
+    //           url: "https://developers.zomato.com/api/v2.1/geocode?lat=" + lat + "&lon=" + lon,
+    //           dataType: "json",
+    //           headers: {"user-key": "53a6837453069a733fdec04247d832eb"}
+    //   })
+    // }
 })

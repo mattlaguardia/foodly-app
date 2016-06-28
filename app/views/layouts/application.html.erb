@@ -46,23 +46,9 @@
 
 <%= yield %>
 
-<script>
-$(document).ready(function(){
-$.getJSON('http://ipinfo.io', function(data){
-  var location = data.loc;
-  return googleLocation(location);
-  })
-  function googleLocation(loc){
-    console.log(loc);
-    $.ajax({
-      url: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + loc + "&radius=8046&sensor=true&rankby=prominence&opennow=true&key=AIzaSyDgS3jO-2X_dYen4FgwTjhm8L2dSgpkWrc&types=restaurant"
-    })
-  }
-})
-</script>
+
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
 
 <!-- VENDOR JAVASCRIPTS -->
 <script src = "https://code.jquery.com/jquery-3.0.0.min.js"></script>
