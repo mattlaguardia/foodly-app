@@ -56,7 +56,7 @@ $.getJSON('http://ipinfo.io', function(data){
   function googleLocation(loc){
     console.log(loc);
     $.ajax({
-      url: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + loc + "&sensor=true&rankby=distance&key=AIzaSyCYURWNpah3uazB9Ss3WX5LImGehyh73V8&types=food"
+      url: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + loc + "&radius=8046&sensor=true&rankby=prominence&opennow=true&key=AIzaSyCYURWNpah3uazB9Ss3WX5LImGehyh73V8&types=restaurant"
     })
   }
 })
