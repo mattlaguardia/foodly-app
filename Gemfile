@@ -43,7 +43,7 @@ gem "koudoku"
 # https://github.com/plataformatec/devise
 # After install -- rails generate devise:install
 # rails generate devise MODEL -- MODEL is our model's name that will be using devise methods ex: User
-# gem "devise"
+gem "devise"
 
 # cancancan gem https://github.com/CanCanCommunity/cancancan
 gem "cancancan"
