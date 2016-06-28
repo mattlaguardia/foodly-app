@@ -5,10 +5,12 @@ class User < ActiveRecord::Base
 	validates :first_name, :last_name, presence: true
 
 	has_many :likes
-	has_many :restaurants, through: :likes
+	has_many :restaurant_likes, :through => :likes, :source => :restaurant
+	# has many restaurant likes
 
 	has_many :dislikes
-	has_many :restaurants, through: :dislikes
+	has_many :restaurant_dislikes, :through => :dislikes, :source => :restaurant
+	# has many restaurant dislikes
 
 	BCrypt::Engine.cost = 12
 	has_secure_password
