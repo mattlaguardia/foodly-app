@@ -1,33 +1,41 @@
-User Signup!
-
-<%= form_for @user do |f| %>
-
-<div>
-  <%= f.text_field :username, placeholder: "Display Name" %>
+<div class="parallax-container">
+  <div class="parallax" id="login-bg-image"></div>
 </div>
+<div class="container row" id="login-form">
+  <div class="col s8" id="login-form-bg">
+    User Signup!
 
-<div>
-  <%= f.text_field :first_name, placeholder: "First Name" %>
-</div>
+    <%= form_for @user do |f| %>
 
-<div>
-  <%= f.text_field :last_name, placeholder: "Last Name" %>
-</div>
+    <div>
+      <%= f.text_field :username, placeholder: "Display Name" %>
+    </div>
 
-<div>
-  <%= f.text_field :email, placeholder: "Email" %>
-</div>
+    <div>
+      <%= f.text_field :first_name, placeholder: "First Name" %>
+    </div>
 
-<div>
-  <%= f.password_field :password, placeholder: "Password" %>
-</div>
+    <div>
+      <%= f.text_field :last_name, placeholder: "Last Name" %>
+    </div>
 
-<div>
-  <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
-</div>
+    <div>
+      <%= f.text_field :email, placeholder: "Email" %>
+    </div>
+
+    <div>
+      <%= f.password_field :password, placeholder: "Password" %>
+    </div>
+
+    <div>
+      <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+    </div>
 
 <div>
 <%= f.submit "Sign up", :class => "button z-depth-0" %>
 </div>
 
-<% end %>
+
+    <% end %>
+  </div>
+</div>
