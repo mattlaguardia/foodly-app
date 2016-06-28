@@ -3,8 +3,7 @@ class RestaurantUsersController < ApplicationController
 		user = User.find(params[:user_id])
 		@restaurant = Restaurant.find(params[:restaurant_id])
 		ben = user.restaurants.push(@restaurant)
-		params[:restaurant_users][:user_id] = @benben
-		p @benben
+		# params[:restaurant_users][:user_id] 
 		redirect_to restaurants_path
 	end
 end
