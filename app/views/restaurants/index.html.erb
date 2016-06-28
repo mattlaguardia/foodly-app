@@ -1,5 +1,5 @@
 <div class="container">
-<h1> restaurants flip page</h1>
+  <h1> restaurants flip page</h1>
 
 <% @restaurant.each do |res| %>
   <% if !current_user.restaurant_likes.include?(res) && !current_user.restaurant_dislikes.include?(res) %>
@@ -25,8 +25,7 @@
               </div>
             </div>
           </div>
-        </div>
 
+    <% end %>
   <% end %>
-<% end %>
 </div>
