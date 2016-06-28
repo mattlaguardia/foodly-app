@@ -47,13 +47,7 @@
   </div>
 
 <%= yield %>
-<script type="text/javascript">
-$(document).ready({
-$.getJSON('http://ipinfo.io', function(data){
-console.log(data)
-  })
-})
-  </script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=geocode&sensor=true&rankby=distance&key=AIzaSyCYURWNpah3uazB9Ss3WX5LImGehyh73V8&types=food"></script>
 <!-- VENDOR JAVASCRIPTS -->
 <script src = "https://code.jquery.com/jquery-3.0.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>

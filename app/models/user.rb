@@ -12,5 +12,4 @@ class User < ActiveRecord::Base
 		user.authenticate(password)
 	end
 
-
 end
