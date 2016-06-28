@@ -36,12 +36,15 @@ RSpec.describe User, type: :model do
 
   describe "when email address is already taken" do
     before do
+      @test_username = FactoryGirl.build(:user, :username => "ohhheyimben")
       @test_email = FactoryGirl.build(:user, :email => "ohhheyimben@iamben.com")
     end
 
+    it "should have a unique username" do
+      expect(@test_username).not_to be_valid
+    end
+
     it "should have a unique email" do
-      user_with_same_email = @user.dup
-      # user_with_same_email.save!
       expect(@test_email).not_to be_valid
     end
 
