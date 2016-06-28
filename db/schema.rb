@@ -11,18 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160628043615) do
+ActiveRecord::Schema.define(version: 20160628185121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "restaurant_users", force: :cascade do |t|
+  create_table "dislikes", force: :cascade do |t|
     t.integer "restaurant_id"
     t.integer "user_id"
   end
 
-  add_index "restaurant_users", ["restaurant_id"], name: "index_restaurant_users_on_restaurant_id", using: :btree
-  add_index "restaurant_users", ["user_id"], name: "index_restaurant_users_on_user_id", using: :btree
+  add_index "dislikes", ["restaurant_id"], name: "index_dislikes_on_restaurant_id", using: :btree
+  add_index "dislikes", ["user_id"], name: "index_dislikes_on_user_id", using: :btree
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "restaurant_id"
+    t.integer "user_id"
+  end
+
+  add_index "likes", ["restaurant_id"], name: "index_likes_on_restaurant_id", using: :btree
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
   create_table "restaurants", force: :cascade do |t|
     t.string  "name"
@@ -48,6 +56,8 @@ ActiveRecord::Schema.define(version: 20160628043615) do
     t.datetime "birthday"
   end
 
-  add_foreign_key "restaurant_users", "restaurants"
-  add_foreign_key "restaurant_users", "users"
+  add_foreign_key "dislikes", "restaurants"
+  add_foreign_key "dislikes", "users"
+  add_foreign_key "likes", "restaurants"
+  add_foreign_key "likes", "users"
 end
