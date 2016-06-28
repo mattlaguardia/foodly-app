@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :users
   resources :restaurants
 
-  post "/users/:user_id/restaurants/:restaurant_id", to: "restaurant_users#create", as: "likes"
+  post "/users/:user_id/restaurants/:restaurant_id", to: "likes#create", as: "likes"
+  post "/users/:user_id/restaurants/:restaurant_id", to: "dislikes#create", as: "dislikes"
 
   resources :users do
   	resources :restaurants
