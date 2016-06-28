@@ -33,6 +33,12 @@ input#password {
   color: white;
   font-size: 20px;
 }
+.side-nav {
+   
+}
+#res-card {
+  align-items: center;
+}
 #login-form {
   color: white;
   position: absolute;
