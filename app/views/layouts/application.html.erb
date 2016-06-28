@@ -47,7 +47,20 @@
   </div>
 
 <%= yield %>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=geocode&sensor=true&rankby=distance&key=AIzaSyCYURWNpah3uazB9Ss3WX5LImGehyh73V8&types=food"></script>
+<script>
+$(document).ready(function(){
+$.getJSON('http://ipinfo.io', function(data){
+  var location = data.loc;
+  return googleLocation(location);
+  })
+  function googleLocation(loc){
+    console.log(loc);
+    $.ajax({
+      url: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + loc + "&sensor=true&rankby=distance&key=AIzaSyCYURWNpah3uazB9Ss3WX5LImGehyh73V8&types=food"
+    })
+  }
+})
+</script>
 <!-- VENDOR JAVASCRIPTS -->
 <script src = "https://code.jquery.com/jquery-3.0.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
