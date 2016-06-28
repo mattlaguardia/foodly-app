@@ -1,7 +1,7 @@
 <div class="container">
   <h2> restaurants flip page</h2>
   <% @restaurant.each do |res| %>
-    <% if @benben != current_user.id %>
+    <% if !current_user.restaurants.include?(res) %>
       <div class="row" id="res-card">
             <div class="col s12 m7">
               <div class="card" id="<%= res.id %>">
