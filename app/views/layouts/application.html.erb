@@ -6,8 +6,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- LOCAL LINKS -->
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -47,8 +45,27 @@
   </div>
 
 <%= yield %>
+
+<script>
+$(document).ready(function(){
+$.getJSON('http://ipinfo.io', function(data){
+  var location = data.loc;
+  return googleLocation(location);
+  })
+  function googleLocation(loc){
+    console.log(loc);
+    $.ajax({
+      url: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + loc + "&sensor=true&rankby=distance&key=AIzaSyCYURWNpah3uazB9Ss3WX5LImGehyh73V8&types=food"
+    })
+  }
+})
+</script>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
 <!-- VENDOR JAVASCRIPTS -->
 <script src = "https://code.jquery.com/jquery-3.0.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
 </body>
 </html>
