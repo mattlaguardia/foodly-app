@@ -6,10 +6,15 @@ class ApplicationController < ActionController::Base
 
   include CanCan::ControllerAdditions
   include SessionsHelper
-  require 'rubygems'
-  require 'oauth'
 
 
+
+  # def location
+  #   response = HTTParty.get "http://ipinfo.io"
+  #   json = JSON.parse(response.body)
+  #   location = json["city"]
+  #   return location
+  # end
 
 
 
@@ -29,7 +34,7 @@ class ApplicationController < ActionController::Base
     redirect_to "/home" unless current_user
   end
 
-  
+
   CONSUMER_KEY = 'uF1UI9OZxij161yg3mhRdQ'
   SECRET = 'yKNlfYlIBM91wAfmQuhceN2FOIU'
   TOKEN = 'MswYR5gpWd-Gh2QScGxeQr0IvCC-eyfq'
@@ -41,9 +46,9 @@ class ApplicationController < ActionController::Base
     json = JSON.parse(response.body)
     location = json["city"]
     p location
-    consumer = OAuth::Consumer.new( CONSUMER_KEY, SECRET, {:site => "http://api.yelp.com", :signature_method => "HMAC-SHA1", :scheme => :query_string})
+    consumer = OAuth::Consumer.new( CONSUMER_KEY, SECRET, { :site => "http://api.yelp.com", :signature_method => "HMAC-SHA1", :scheme => :query_string })
     access_token = OAuth::AccessToken.new( consumer, TOKEN, TOKEN_SECRET)
-    api = access_token.get("https://api.yelp.com/v2/search/?term=restaurants&location=" + location + "&sort=2&limit=20&radius_filter=8000")
+    api = access_token.get("https://api.yelp.com/v2/search/?term=food&location=" + location + "&sort=2&limit=20&radius_filter=8000")
     data = JSON.parse(api.body)
     p data
 

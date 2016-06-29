@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
+  #search_location
+  # get "/restaurants/search", to: "restaurants#search_location"
 
 end

@@ -28,7 +28,7 @@ class RestaurantsController < ApplicationController
 
 
   def index
-    location
+
     if current_user == nil
 			redirect_to root_path, flash: {error: "You're not signed in!"}
 		else
@@ -40,10 +40,19 @@ class RestaurantsController < ApplicationController
       #index will calls all restaurants on the backend, the view will display them one at a time.
     end
   end
+  # def create
+  #   @restaurant = Restaurant.find(params["search_location"])
+  #   redirect_to @restaurants
+  # end
 
   def show
     @restaurant = Restaurant.find(params[:id])
     render :show
   end
 
+# private
+#
+# def restaurant_selection(restaurant_name, restaurant_location)
+#   @restaurants = YelpHelper::ask_for_restaurants(restaurant_name, restaurant_location)
+# end
 end

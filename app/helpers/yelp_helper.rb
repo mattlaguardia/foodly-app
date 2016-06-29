@@ -1,6 +1,6 @@
 module YelpHelper
-  def self.ask_for_restaurants
-    YelpHelper::api_call_restaurants(local)["businesses"].map do |restaurant|
+  def self.ask_for_restaurants(restaurant_name, restaurant_location)
+    YelpHelper::api_call_restaurants(restaurant_name, restaurant_location)["businesses"].map do |restaurant|
       {
         name: restaurant["name"],
         city: restaurant["location"]["city"],
@@ -12,14 +12,8 @@ module YelpHelper
     end
   end
 
-  def location
-    response = HTTParty.get "http://ipinfo.io"
-    json = JSON.parse(response.body)
-    location = json["city"]
-    return location
-  end
 
-  def self.api_call_restaurants(local)
+  def self.api_call_restaurants(restaurant_name, restaurant_location)
     search_location = location
 
     consumer_key = uF1UI9OZxij161yg3mhRdQ
