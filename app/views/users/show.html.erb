@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="row">
+  <div>
     <div class="col s12 offset-1">
-      <div id="profile-pic-div">
+      <div class="row" id="profile-pic-div">
        <a href="/users/<%=@user.id%>/edit"><%= image_tag @user.image.url(:medium), id: "profile-img" %></a>
       </div>
       <div class="profile-name">
@@ -22,6 +22,17 @@
         </div>
       </div>
     <% end %>
+
+<!-- TESTING FOR D3 -->
+    <div class="row">
+      <ul>
+        <li class="likes-count"><%= @likes.length %></li>
+        <li class="dislikes-count"><%= @dislikes.length %></li>
+      </ul>
+    </div>
+
+    <div class="pie-graph">
+    </div>
 
     </div>
   </div>

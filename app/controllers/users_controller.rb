@@ -30,6 +30,7 @@ class UsersController < ApplicationController
 
 	def show
 		@likes = Like.all
+		@dislikes = Dislike.all
 		@user=User.find(params[:id])
 		if current_user != User.find(params[:id])
 			redirect_to root_path, flash: {error: "You're not authorized to view that page!"}
