@@ -48,20 +48,6 @@
 
 <%= yield %>
 
-<script>
-$(document).ready(function(){
-$.getJSON('http://ipinfo.io', function(data){
-  var location = data.loc;
-  return googleLocation(location);
-  })
-  function googleLocation(loc){
-    console.log(loc);
-    $.ajax({
-      url: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + loc + "&sensor=true&rankby=distance&key=AIzaSyCYURWNpah3uazB9Ss3WX5LImGehyh73V8&types=food"
-    })
-  }
-})
-</script>
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 

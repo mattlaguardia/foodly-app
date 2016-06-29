@@ -12,7 +12,9 @@ class ApplicationController < ActionController::Base
   end
 
   def search
-    render json: Yelp.client.search(:city, {term: "food"})
+    @yelp = Yelp.client.search(:city, {term: "restaurants"})
+    @yelp.businesses
+    render json: @yelp.businesses
   end
 
   def current_user
