@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require_tree .
 //= require d3
-//= require jquery
 
 $(document).ready(function(){
   $(".button-collapse").sideNav();
@@ -23,13 +22,13 @@ $(document).ready(function(){
   $(".like-button").click(function(){
     $(this).parent().hide();
   })
-  $.getJSON('http://ipinfo.io', function(data){
-    var location = data.loc;
-    var coor = location.split(',');
-    var lat = coor[0];
-    var lon = coor[1];
-    return lat, lon;
-    })
+  // $.getJSON('http://ipinfo.io', function(data){
+  //   var location = data.loc;
+  //   var coor = location.split(',');
+  //   var lat = coor[0];
+  //   var lon = coor[1];
+  //   return lat, lon;
+  //   })
     // function googleLocation(lat, lon){
     //   console.log(lat, lon);
     //   $.ajax({

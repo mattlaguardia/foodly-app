@@ -1,32 +1,35 @@
 <div class="container">
-<h1> restaurants flip page</h1>
+  <h1> restaurants flip page</h1>
 
+<div class="row">
 <% @restaurant.each do |res| %>
-  <% if !current_user.restaurant_likes.include?(res) %>
-    <div class="row">
-          <div class="col s12 m7">
-            <div class="card" id="<%= res.id %>">
+  <% if !current_user.restaurant_likes.include?(res) && !current_user.restaurant_dislikes.include?(res) %>
+          <div class="col s12">
+            <div class="card medium" id="<%= res.id %>">
               <div class="card-image">
                 <img src="<%=res.featured_image %>">
-                <span class="card-title">Card Title</span>
+                <span class="card-title"><%=res.name%></span>
               </div>
               <div class="card-content">
                 <p>
-                  <h3><%=res.name%></h3>
                   <br>
                   <%=res.location %>
                   <br>
                   <%=res.phone_numbers %>
                 </p>
+                <p><%= @response.id %>
               </div>
               <div class="card-action">
-                <%= button_to "Like", likes_path(current_user, res.id), method: "post", class: "btn", id: "like-button" %>
+              <div class="col s6">
                 <%= button_to "Dislike", dislikes_path(current_user, res.id), method: "post", class: "btn", id: "dislike-button" %>
+                </div>
+                <div class="col s6">
+                <%= button_to "Like", likes_path(current_user, res.id), method: "post", class: "btn", id: "like-button" %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
+    <% end %>
   <% end %>
-<% end %>
 </div>

@@ -49,7 +49,8 @@ gem "koudoku"
 gem "cancancan"
 
 gem "httparty"
-gem "yelp", require: 'yelp'
+gem 'oauth', '~> 0.5.1'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -60,6 +61,8 @@ gem "yelp", require: 'yelp'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -68,4 +71,10 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :test do
+  gem 'shoulda-matchers', '~> 3.0', require: false
+  gem 'database_cleaner', '~> 1.5'
+  gem 'faker'
 end

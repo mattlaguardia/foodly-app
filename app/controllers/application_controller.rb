@@ -6,29 +6,13 @@ class ApplicationController < ActionController::Base
 
   include CanCan::ControllerAdditions
   include SessionsHelper
+  require 'rubygems'
+  require 'oauth'
 
-  # def search
-  #   client.search('San Francisco',{term: 'food',
-  #                                  limit: 10,
-  #   })
-  # end
-  #
-  #
-  def location
-    response = HTTParty.get "http://ipinfo.io"
-    json = JSON.parse(response.body)
-    location = json["loc"]
-    coor = location.split(',')
-    lat = coor[0]
-    lon = coor[1]
-    p lat, lon
-  end
-  # #   # api = HTTParty.get "https://developers.zomato.com/api/v2.1/geocode?lat=" + lat + "&lon=" + lon + "&user-key=beca673a68b01183b7a1048f9ed2af93"
-  #   api = HTTParty.get "https://api.yelp.com/v2/search?term=food&location=San+Francisco&oauth_consumer_key=j5SsKIRZLQzusOiHYbNBlw&oauth_token=OtNjMbCgpVQDYbEA-bPe6qZPYE22uX9_&oauth_signature_method=hmac-sha1&oauth_signature=BtYkEIXNPDcCTYkETO8RYyGaWoo&oauth_timestamp=" + Time.now.to_s + "&oauth_nonce=" + SecureRandom.base64 + ""
-  #   data = JSON.parse(api.body)
-  #   p data
 
-  # end
+
+
+
 
 
     def current_user
@@ -43,6 +27,26 @@ class ApplicationController < ActionController::Base
 
   def authorize
     redirect_to "/home" unless current_user
+  end
+
+  
+  CONSUMER_KEY = 'uF1UI9OZxij161yg3mhRdQ'
+  SECRET = 'yKNlfYlIBM91wAfmQuhceN2FOIU'
+  TOKEN = 'MswYR5gpWd-Gh2QScGxeQr0IvCC-eyfq'
+  TOKEN_SECRET = 'sHoCt6uOOyxtGa0-GE9JUqPtNR0'
+
+
+  def location
+    response = HTTParty.get "http://ipinfo.io"
+    json = JSON.parse(response.body)
+    location = json["city"]
+    p location
+    consumer = OAuth::Consumer.new( CONSUMER_KEY, SECRET, {:site => "http://api.yelp.com", :signature_method => "HMAC-SHA1", :scheme => :query_string})
+    access_token = OAuth::AccessToken.new( consumer, TOKEN, TOKEN_SECRET)
+    api = access_token.get("https://api.yelp.com/v2/search/?term=restaurants&location=" + location + "&sort=2&limit=20&radius_filter=8000")
+    data = JSON.parse(api.body)
+    p data
+
   end
 
 end

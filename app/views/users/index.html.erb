@@ -1,1 +1,24 @@
-Hello World!
+<div class="parallax-container">
+  <div class="parallax" id="users-index-bg-image"></div>
+</div>
+<div class="container row" id="login-form">
+  <div class="col s8" id="login-form-bg">
+    <h2> WELCOME TO rLOVE! </h2>
+    <div class="row">
+      <div class="col s5 offset-s1">
+    <p> New user? Create an account! </p>
+  </div>
+<div class="col s6">
+    <p> Already have an account? Sign in! </p>
+  </div>
+</div>
+    <div class="container" id="homepage">
+      <div class="col s6">
+        <%= button_to "Signup", new_user_path, method: "get", class: "btn", id: "signup-button" %>
+      </div>
+      <div class="col s6">
+        <%= button_to "Login", login_path, method: "get", class: "btn", id: "login-button" %>
+      </div>
+    </div>
+  </div>
+</div>
