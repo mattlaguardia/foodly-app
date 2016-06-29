@@ -20,10 +20,6 @@
     </div>
 
     <div>
-      <%= f.date_select :birthday, { :order => [:month, :day], :prompt => { :day => 'Select day', :month => 'Select month' } }, {:class => "select birthday"} %>
-    </div>
-
-    <div>
       <%= f.text_field :email, placeholder: "Email" %>
     </div>
 
@@ -43,3 +39,8 @@
     <% end %>
   </div>
 </div>
+
+<%= form_for @user do |f| %>
+<%= f.datetime_select :birthday, { :order => [:month, :day], :prompt => { :day => 'Select day', :month => 'Select month' } }, {:class => "select birthday"} %>
+  <%= f.submit %>
+<% end %>
