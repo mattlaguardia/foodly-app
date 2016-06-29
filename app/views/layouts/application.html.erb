@@ -11,8 +11,10 @@
 <body>
   <nav class="z-depth-0">
     <div class="nav-wrapper z-depth-0">
-      <a href="#!" class="brand-logo">rLove</a>
+      <div id="logoDiv">
+      <a href="#" class="brand-logo">rLove</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
       <ul class="right hide-on-med-and-down">
         <% if current_user %>
           <li><a href="/users/<%= current_user.id %>">Profile</a></li>

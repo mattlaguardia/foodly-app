@@ -59,6 +59,27 @@ input#password {
   max-width:100%;
   max-height:100%;
 }
+
+#users-index-bg-image{
+  background: url(http://freshandfitvancouver.com/wp-content/uploads/2016/03/bigstock-Food-Table-Healthy-Delicious-O-92994914.jpg) no-repeat center center fixed;
+  background-size: cover;
+  max-width:100%;
+  max-height:100%;;
+}
 #signup {
   background-color: #1D374F;
+}
+
+#like-button{
+  float: right;
+}
+
+nav .brand-logo {
+  padding-left: 25px;
+}
+
+#login-button{
+  float: right;
+  align: right;
+  clear: both;
 }
