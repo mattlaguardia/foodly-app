@@ -36,6 +36,9 @@ gem "paperclip"
 # koudoku --> for subscriptions
 gem "koudoku"
 
+# stripe --> manages payment and subscriptions
+gem 'stripe'
+
 
 # cancancan gem https://github.com/CanCanCommunity/cancancan
 gem "cancancan"
