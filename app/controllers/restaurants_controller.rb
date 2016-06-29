@@ -4,7 +4,9 @@ class RestaurantsController < ApplicationController
     if current_user == nil
 			redirect_to root_path, flash: {error: "You're not signed in!"}
 		else
-      @restaurant = Restaurant.all
+      @yelp = Yelp.client.search(:city, {term: "restaurants"})
+      @restaurant = @yelp.businesses
+      @yelp.businesses
       render :index
     end
   end
