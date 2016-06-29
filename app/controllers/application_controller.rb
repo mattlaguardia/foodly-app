@@ -7,14 +7,21 @@ class ApplicationController < ActionController::Base
   include CanCan::ControllerAdditions
   include SessionsHelper
 
+  def city
+    "San Francisco"
+  end
 
-    def current_user
-      if session[:user_id]
-        @current_user ||= User.find(session[:user_id])
-      else
-        nil
-      end
+  def search
+    render json: Yelp.client.search(:city, {term: "food"})
+  end
+
+  def current_user
+    if session[:user_id]
+      @current_user ||= User.find(session[:user_id])
+    else
+      nil
     end
+  end
 
   helper_method :current_user
 
