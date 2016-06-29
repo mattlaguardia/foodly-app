@@ -30,8 +30,30 @@ input.formInput {
   color: white;
   font-size: 20px;
 }
-.side-nav {
-   
+#restaurant-image {
+  padding-top: 5px;
+  width: 100px;
+  border-radius: 50%;
+}
+#restaurant-likes {
+  border-top: 1px solid #c5c3c3;
+  border-bottom: 1px solid #c5c3c3;
+  padding-top: 5px;
+}
+#restaurant-description {
+  padding-top: 10px;
+}
+#profile-pic-div {
+  align-content: center;
+  border-bottom: 1px solid #c5c3c3;
+  text-align: center;
+}
+#profile-img {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 50%;
+  width: 200px;
+  position: inherit;
 }
 #res-card {
   align-items: center;

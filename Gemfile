@@ -36,14 +36,6 @@ gem "paperclip"
 # koudoku --> for subscriptions
 gem "koudoku"
 
-# materialize gem - Sass
-# gem 'materialize-sass'
-
-# Devise for authentication -- allows multiple user types to be logged in
-# https://github.com/plataformatec/devise
-# After install -- rails generate devise:install
-# rails generate devise MODEL -- MODEL is our model's name that will be using devise methods ex: User
-# gem "devise"
 
 # cancancan gem https://github.com/CanCanCommunity/cancancan
 gem "cancancan"

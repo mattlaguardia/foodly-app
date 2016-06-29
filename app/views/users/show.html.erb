@@ -1,26 +1,39 @@
 <div class="container">
-  <div class="row">
-    <div class="col s10 offset-1">
-
-      <div id="profilePic">
-        <img class="responsive-img" src="google.com" alt="Profile Picture"/>
-          <br>
-        <h2><%= @user.username %></h2>
+  <div>
+    <div class="col s12 offset-1">
+      <div class="row" id="profile-pic-div">
+       <a href="/users/<%=@user.id%>/edit"><%= image_tag @user.image.url(:medium), id: "profile-img" %></a>
+      </div>
+      <div class="profile-name">
+        <h2><%= @user.username %>'s likes:</h2>
       </div>
 
-    <div class="card small">
-      <div class="card-image">
-        <img src="#" alt="Restaurant Image">
-        <span class="card-title">Restaurant Name</span>
-      </div>
-        <div class="card-content">
-          <p>Cuisines</p>
-          <p>Price Range</p>
+<!-- TESTING FOR TABLE -->
+    <% @likes.each do |like| %>
+      <div class="row col s12" id="restaurant-likes">
+        <div class="col s4">
+          <img src="<%= like.restaurant.thumb_url%>" id="restaurant-image" alt="restaurant image" />
         </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
+        <div class="col s6" id="restaurant-description">
+          <%= like.restaurant.name %><br>
+          <%= like.restaurant.location %><br>
+          Rating <br>
+          Cuisine
         </div>
       </div>
+    <% end %>
+
+<!-- TESTING FOR D3 -->
+    <div class="row">
+      <ul>
+        <li class="likes-count"><%= @likes.length %></li>
+        <li class="dislikes-count"><%= @dislikes.length %></li>
+      </ul>
+    </div>
+
+    <div class="pie-graph">
+    </div>
+
     </div>
   </div>
 </div>
