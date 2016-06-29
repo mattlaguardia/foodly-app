@@ -36,6 +36,9 @@ gem "paperclip"
 # koudoku --> for subscriptions
 gem "koudoku"
 
+# yelp gem 
+gem "yelp", require: "yelp"
+
 
 # cancancan gem https://github.com/CanCanCommunity/cancancan
 gem "cancancan"
