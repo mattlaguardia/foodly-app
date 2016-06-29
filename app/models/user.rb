@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	
+
 	validates :username, presence: true, uniqueness: true
 	validates :email, presence: true, uniqueness: true, format: /@/
 	validates :first_name, :last_name, presence: true
@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
 
 	BCrypt::Engine.cost = 12
 	has_secure_password
+
+	has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 	def self.confirm(email, password)
 		user = User.find_by_email(email)
