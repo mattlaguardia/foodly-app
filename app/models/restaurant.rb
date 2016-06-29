@@ -8,4 +8,6 @@ class Restaurant < ActiveRecord::Base
 	has_many :dislikes
 	has_many :users, through: :dislikes
 
+	
+
 end

@@ -48,6 +48,9 @@ gem "koudoku"
 # cancancan gem https://github.com/CanCanCommunity/cancancan
 gem "cancancan"
 
+gem "httparty"
+gem "yelp", require: 'yelp'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

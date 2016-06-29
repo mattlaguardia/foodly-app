@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
 	def index
+		location
 		render :index
 	end
 
@@ -45,8 +46,7 @@ class UsersController < ApplicationController
 		else
 			redirect_to "/"
 		end
-  end
-
+	end
 	def destroy
 		@user=User.find(params[:id])
 		@user.destroy
