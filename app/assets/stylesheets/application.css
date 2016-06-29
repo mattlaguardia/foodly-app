@@ -17,14 +17,11 @@
 nav {
   background-color: #1D374F;
 }
-input#username {
+input.formInput {
   border: 1px solid #ffffff;
   border-radius: 2px;
 }
-input#password {
-  border: 1px solid #ffffff;
-  border-radius: 2px;
-}
+
 .parallax-container {
   height: 800px;
 }
@@ -33,8 +30,30 @@ input#password {
   color: white;
   font-size: 20px;
 }
-.side-nav {
-   
+#restaurant-image {
+  padding-top: 5px;
+  width: 100px;
+  border-radius: 50%;
+}
+#restaurant-likes {
+  border-top: 1px solid #c5c3c3;
+  border-bottom: 1px solid #c5c3c3;
+  padding-top: 5px;
+}
+#restaurant-description {
+  padding-top: 10px;
+}
+#profile-pic-div {
+  align-content: center;
+  border-bottom: 1px solid #c5c3c3;
+  text-align: center;
+}
+#profile-img {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 50%;
+  width: 200px;
+  position: inherit;
 }
 #res-card {
   align-items: center;
@@ -56,9 +75,38 @@ input#password {
 #login-bg-image {
   background: url(food-on-table.jpg) no-repeat center center fixed;
   background-size: cover;
-  max-width:100%;
-  max-height:100%;
+}
+
+#users-index-bg-image{
+  background: url(http://freshandfitvancouver.com/wp-content/uploads/2016/03/bigstock-Food-Table-Healthy-Delicious-O-92994914.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 #signup {
   background-color: #1D374F;
+}
+
+#like-button{
+  float: right;
+}
+
+nav .brand-logo {
+  padding-left: 25px;
+}
+
+#login-button{
+  float: right;
+  align: right;
+  clear: both;
+}
+
+#new-user-bg-image{
+  background: url(https://format-com-cld-res.cloudinary.com/image/private/s--A6k4TGjT--/c_limit,g_center,h_65535,w_1600/a_auto,fl_keep_iptc.progressive,q_95/161920-9403977-overhead_2_food_jpg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  max-width: 100%;
+}
+
+.signUp{
+  margin-top: 0px;
 }

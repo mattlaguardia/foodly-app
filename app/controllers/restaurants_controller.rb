@@ -6,9 +6,6 @@ class RestaurantsController < ApplicationController
 		else
       @restaurant = Restaurant.all
       render :index
-      # current_user.restaurants.where()
-      # .where query method in active record docs
-      #index will calls all restaurants on the backend, the view will display them one at a time.
     end
   end
 

@@ -36,14 +36,6 @@ gem "paperclip"
 # koudoku --> for subscriptions
 gem "koudoku"
 
-# materialize gem - Sass
-# gem 'materialize-sass'
-
-# Devise for authentication -- allows multiple user types to be logged in
-# https://github.com/plataformatec/devise
-# After install -- rails generate devise:install
-# rails generate devise MODEL -- MODEL is our model's name that will be using devise methods ex: User
-# gem "devise"
 
 # cancancan gem https://github.com/CanCanCommunity/cancancan
 gem "cancancan"
@@ -57,6 +49,8 @@ gem "cancancan"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -65,4 +59,10 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :test do
+  gem 'shoulda-matchers', '~> 3.0', require: false
+  gem 'database_cleaner', '~> 1.5'
+  gem 'faker'
 end
