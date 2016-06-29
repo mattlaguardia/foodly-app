@@ -1,41 +1,50 @@
+<section id="new-user-bg-image">
 <div class="parallax-container">
-  <div class="parallax" id="login-bg-image"></div>
+  <div class="parallax" ></div>
 </div>
 <div class="container row" id="login-form">
   <div class="col s8" id="login-form-bg">
-    User Signup!
+  <h4 class="signUp">Signup</h4>
 
     <%= form_for @user do |f| %>
 
     <div>
-      <%= f.text_field :username, placeholder: "Display Name" %>
+      <h6>Username:</h6><br>
+      <%= f.text_field :username, required: true, class: "formInput" %>
     </div>
 
     <div>
-      <%= f.text_field :first_name, placeholder: "First Name" %>
+      <h6>First Name:</h6><br>
+      <%= f.text_field :first_name, class: "formInput" %>
     </div>
 
     <div>
-      <%= f.text_field :last_name, placeholder: "Last Name" %>
+      <h6>Last Name:</h6><br>
+      <%= f.text_field :last_name, class: "formInput" %>
     </div>
 
     <div>
-      <%= f.text_field :email, placeholder: "Email" %>
+      <h6>Email:</h6><br>
+      <%= f.text_field :email, class: "formInput" %>
     </div>
 
     <div>
-      <%= f.password_field :password, placeholder: "Password" %>
+      <h6>Password:</h6><br>
+      <%= f.password_field :password, class: "formInput" %>
     </div>
 
     <div>
-      <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+      <h6>Confirm Password:</h6><br>
+      <%= f.password_field :password_confirmation, class: "formInput" %>
     </div>
 
 <div>
-<%= f.submit "Sign up", :class => "button z-depth-0" %>
+<%= f.submit "Sign up", :class => "button z-depth-0 btn" %>
 </div>
 
 
     <% end %>
   </div>
+
 </div>
+</section>
