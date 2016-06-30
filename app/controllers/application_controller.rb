@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   require 'json'
   require 'open-uri'
 
+
   def city
     # data = JSON.parse(open('http://ipinfo.io').body)
     # location =
@@ -27,6 +28,23 @@ class ApplicationController < ActionController::Base
   #   @yelp.businesses
   #   render json: @yelp.businesses
   # end
+
+  def location
+    # response = HTTParty.get "http://ipinfo.io"
+    # json = JSON.parse(response.body)
+    # location = json["city"]
+    location = "San Francisco"
+    return location
+  end
+
+  def yelp
+    Yelp.client.search(location, {term: "restaurants"})
+  end
+
+  def search
+    render json: yelp.businesses
+  end
+
 
 
   def current_user
