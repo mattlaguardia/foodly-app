@@ -1,11 +1,33 @@
-<form action="/charges" method="POST">
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_aaq2unvoPqvoE0Fil7TPG7nB"
-    data-amount="2000"
-    data-name="PAY NOW"
-    data-description="NOWWW"
-    data-image="/img/documentation/checkout/marketplace.png"
-    data-locale="auto">
-  </script>
-</form>
+<section id="supreme-bg-image">
+<div class="parallax-container">
+  <div class="parallax" ></div>
+</div>
+<div class="container row" id="login-form">
+  <div class="col s8" id="supreme-bg">
+  <h4 class="foodlySupreme">Get Foodly Supreme</h4>
+  <%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: $0.50</span>
+    </label>
+  </article>
+  <% end %>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Sign up for month's subscription"
+          data-amount="50"
+          data-locale="auto"></script>
+
+</div>
+</section>
+
+
+
+
+
