@@ -21,7 +21,9 @@ input.formInput {
   border: 1px solid #ffffff;
   border-radius: 2px;
 }
-
+img.yelp-img {
+  border-radius: 50%;
+}
 .parallax-container {
   height: 800px;
 }
@@ -29,6 +31,13 @@ input.formInput {
   background-color: rgba(250, 74, 74, 0.9);
   color: white;
   font-size: 20px;
+}
+.yelp-image-div {
+  position: center;
+  left: 25%;
+}
+.swipe-card {
+  border: 1px solid #c5c3c3;
 }
 #restaurant-image {
   padding-top: 5px;

@@ -42,7 +42,8 @@ gem "yelp", require: "yelp"
 # stripe --> manages payment and subscriptions
 gem 'stripe'
 
-
+# httparty gem
+gem "httparty"
 
 # cancancan gem https://github.com/CanCanCommunity/cancancan
 gem "cancancan"
