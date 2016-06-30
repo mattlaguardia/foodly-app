@@ -5,17 +5,17 @@
 <% @restaurant.each do |res| %>
   <% if !current_user.restaurant_likes.include?(res) && !current_user.restaurant_dislikes.include?(res) %>
           <div class="col s12">
-            <div class="card medium" id="<%= res.id %>">
+            <div class="card medium">
               <div class="card-image">
-                <img src="<%=res.featured_image %>">
+                <img src="<%=res.image_url %>">
                 <span class="card-title"><%=res.name%></span>
               </div>
               <div class="card-content">
                 <p>
                   <br>
-                  <%=res.location %>
+                  <%=res.location.address %>
                   <br>
-                  <%=res.phone_numbers %>
+                  <%=res.phone %>
                 </p>
               </div>
               <div class="card-action">

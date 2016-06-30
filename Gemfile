@@ -36,8 +36,12 @@ gem "paperclip"
 # koudoku --> for subscriptions
 gem "koudoku"
 
+# yelp gem
+gem "yelp", require: "yelp"
+
 # stripe --> manages payment and subscriptions
 gem 'stripe'
+
 
 
 # cancancan gem https://github.com/CanCanCommunity/cancancan

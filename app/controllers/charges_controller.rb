@@ -1,4 +1,12 @@
 class ChargesController < ApplicationController
+
+protect_from_forgery with: :null_session
+
+	def handle_unverified_request
+		forgery_protection_strategy.new(self).handle_unverified_request
+	end
+
+
 	def new
 	end
 
@@ -19,9 +27,9 @@ class ChargesController < ApplicationController
   			flash[:error] = e.message
   			redirect_to new_charge_path
 		end
-		user = User.find(params[:user_id])
-		customer = Stripe::Customer.find(params[:id])
+		# user = User.find(params[:user_id])
+		# customer = Stripe::Customer.find(params[:id])
+		# user.push(customer) #customer_id?
 		# push customer id into user
 		# if customer id is not nil, show specific views
 	end
-
