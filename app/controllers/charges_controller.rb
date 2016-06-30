@@ -1,6 +1,7 @@
 class ChargesController < ApplicationController
 
 protect_from_forgery with: :null_session
+skip_before_action :verify_authenticity_token, only: [:new, :create]
 
 	def handle_unverified_request
 		forgery_protection_strategy.new(self).handle_unverified_request
@@ -8,10 +9,16 @@ protect_from_forgery with: :null_session
 
 
 	def new
+		if current_user
+			render :new
+			
+		else
+			redirect_to login_path
+		end
 	end
 
 	def create
-		@amount = 50
+		@amount = 9900
 		customer = Stripe::Customer.create(
 			:email => params[:stripeEmail],
 			:source  => params[:stripeToken]
@@ -22,14 +29,14 @@ protect_from_forgery with: :null_session
     		:description => 'Rails Stripe customer',
     		:currency    => 'usd'
 			)
-
+		current_user.user_stripe = customer.id
+		current_user.save
+		p current_user
+		p customer
+		
 		rescue Stripe::CardError => e
   			flash[:error] = e.message
   			redirect_to new_charge_path
-		end
-		# user = User.find(params[:user_id])
-		# customer = Stripe::Customer.find(params[:id])
-		# user.push(customer) #customer_id?
-		# push customer id into user
-		# if customer id is not nil, show specific views
+		end	
+		
 	end
