@@ -8,6 +8,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <!-- LOCAL LINKS -->
   <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </head>
 <body>
   <nav class="z-depth-0">
@@ -48,9 +50,6 @@
   </div>
 
 <%= yield %>
-
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 <!-- VENDOR JAVASCRIPTS -->
 <script src = "https://code.jquery.com/jquery-3.0.0.min.js"></script>

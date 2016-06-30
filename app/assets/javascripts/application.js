@@ -20,18 +20,16 @@ $(document).ready(function(){
   $(".button-collapse").sideNav();
   $('.parallax').parallax();
 
-  // $(".swipe-card").on("load", function(){
-  //   $(this).sibling("div").hide()
-  // })
   $(".like-button").click(function(event){
     event.preventDefault();
     $target = $(event.target);
     $target.attr("disabled", "true");
-    $form = $target.parent();
+    $form = $target.parent().parent();
 
     $.ajax({
       type: $form.attr('method'),
       url: $form.attr('action'),
+      data: $form
       dataType: "JSON"
     }).done(function(res){
       console.log(res);
@@ -46,8 +44,11 @@ $(document).ready(function(){
   })
   $(function(){
     $(".dislike-button").on("click", function(event){
-      $(this).parent("div").hide();
+     console.log("Swiped!")
     });
   })
+  // $(".swipe-card").on("load", function(){
+  //   $(this).sibling("div").hide()
+  // })
   // AJAX CALL TO RENDER IN REAL TIME WITHOUT A PAGE REFRESH //
 })
