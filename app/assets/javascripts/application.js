@@ -19,4 +19,35 @@
 $(document).ready(function(){
   $(".button-collapse").sideNav();
   $('.parallax').parallax();
+
+  // $(".swipe-card").on("load", function(){
+  //   $(this).sibling("div").hide()
+  // })
+  $(".like-button").click(function(event){
+    event.preventDefault();
+    $target = $(event.target);
+    $target.attr("disabled", "true");
+    $form = $target.parent();
+
+    $.ajax({
+      type: $form.attr('method'),
+      url: $form.attr('action'),
+      dataType: "JSON"
+    }).done(function(res){
+      console.log(res);
+      // $form.parent().children('').html(res.likes);
+    });
+  });
+
+  $(function(){
+    $(".like-button").on("click", function(event){
+      console.log("Swiped!")
+    });
+  })
+  $(function(){
+    $(".dislike-button").on("click", function(event){
+      $(this).parent("div").hide();
+    });
+  })
+  // AJAX CALL TO RENDER IN REAL TIME WITHOUT A PAGE REFRESH //
 })

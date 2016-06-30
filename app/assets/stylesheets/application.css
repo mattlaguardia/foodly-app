@@ -39,6 +39,9 @@ img.yelp-img {
 .swipe-card {
   border: 1px solid #c5c3c3;
 }
+.swiped {
+  background-color: red;
+}
 #restaurant-image {
   padding-top: 5px;
   width: 100px;
@@ -93,8 +96,7 @@ img.yelp-img {
 #signup {
   background-color: #1D374F;
 }
-
-#like-button{
+.like-button{
   float: right;
 }
 

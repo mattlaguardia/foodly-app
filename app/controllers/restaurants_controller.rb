@@ -4,8 +4,8 @@ class RestaurantsController < ApplicationController
     if current_user == nil
 			redirect_to root_path, flash: {error: "You're not signed in!"}
 		else
-      @restaurants = yelp.businesses
-      create
+      # create
+      @restaurants = Restaurant.all
       render :index
     end
   end
@@ -14,18 +14,18 @@ class RestaurantsController < ApplicationController
   def create
     ben = yelp.businesses
     ## ADD IF STATEMENT CHECKING WHATS IN THE DATABASE ##
-    # ben.each do |item|
-    #   c = Restaurant.new(
-    #   :name => item.name,
-    #   :location => item.location.neighborhoods,
-    #   :phone_numbers => item.display_phone,
-    #   :featured_image => item.image_url,
-    #   :thumb_url => item.url,
-    #   :cuisines => item.categories,
-    #   :aggregate_rating => item.rating
-    # )
-    #   c.save
-    # end
+    ben.each do |item|
+      c = Restaurant.new(
+      :name => item.name,
+      :location => item.location.neighborhoods,
+      :phone_numbers => item.display_phone,
+      :featured_image => item.image_url,
+      :thumb_url => item.url,
+      :cuisines => item.categories,
+      :aggregate_rating => item.rating
+    )
+      c.save
+    end
   end
 
   def show
