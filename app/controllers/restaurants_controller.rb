@@ -22,14 +22,16 @@ class RestaurantsController < ApplicationController
       :featured_image => item.image_url,
       :thumb_url => item.url,
       :cuisines => item.categories,
-      :aggregate_rating => item.rating
+      :aggregate_rating => item.rating,
+      :yelp => item.id
     )
       c.save
     end
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])
+    create
+    @restaurants = Restaurant.all
     render :show
   end
 

@@ -3,7 +3,7 @@
 
   <% @restaurants.each do |res| %>
     <% if !current_user.restaurant_likes.include?(res) && !current_user.restaurant_dislikes.include?(res) %>
-
+    <% if res.yelp != current_user.restaurant_likes %>
 
     <div class="swipe-card col s8">
       <center>
@@ -24,11 +24,11 @@
       </div>
     </center>
     <div class="like-dislike">
-      <%= button_to "  Like  ", likes_path(current_user, res.id), method: "post", class: "btn like-button" %>
-      <%= button_to "Dislike", dislikes_path(current_user, res.id), method: "post", class: "btn dislike-button" %>
+      <%= button_to "  Like  ", likes_path(current_user, res.id, res.yelp), method: "post", class: "btn like-button" %>
+      <%= button_to "Dislike", dislikes_path(current_user, res.id, res.yelp), method: "post", class: "btn dislike-button" %>
     </div>
     </div>
-
+    <% end %>
     <% break %>
     <% end %>
   <% end %>

@@ -23,6 +23,8 @@ input.formInput {
 }
 img.yelp-img {
   border-radius: 50%;
+  display: block;
+  margin: 0 auto;
 }
 .parallax-container {
   height: 800px;
@@ -33,14 +35,40 @@ img.yelp-img {
   font-size: 20px;
 }
 .yelp-image-div {
-  position: center;
-  left: 25%;
+  padding: 20px;
 }
 .swipe-card {
   border: 1px solid #c5c3c3;
+  text-align: center;
 }
 .swiped {
   background-color: red;
+}
+.edit-profile-img {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 50%;
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+.edit-form {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.edit-header {
+  border-bottom: 1px solid #ffffff;
+}
+.edit-form-bg {
+  border-radius: 10px;
+  background-color: rgba(55, 51, 51, 0.9);
+  padding-bottom: 10px;
+  color: white;
+}
+.bg-image-edit {
+  background: url(food-on-table.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 #restaurant-image {
   padding-top: 5px;
@@ -48,12 +76,12 @@ img.yelp-img {
   border-radius: 50%;
 }
 #restaurant-likes {
-  border-top: 1px solid #c5c3c3;
   border-bottom: 1px solid #c5c3c3;
   padding-top: 5px;
 }
 #restaurant-description {
   padding-top: 10px;
+  padding-bottom: 10px;
 }
 #profile-pic-div {
   align-content: center;
@@ -99,6 +127,9 @@ img.yelp-img {
 .like-button{
   float: right;
 }
+.dislike-button{
+  float: left;
+}
 
 nav .brand-logo {
   padding-left: 25px;
@@ -132,28 +163,4 @@ form.button_to{
   background-position: center;
   background-attachment: fixed;
   max-width: 100%;
-}
-
-#aboutuspage{
-  background-color: rgba(55, 51, 51, 0.7);
-  border-radius: 20px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px
-}
-
-#contactpage{
-  background-color: rgba(55, 51, 51, 0.7);
-  border-radius: 20px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px
-}
-.founders {
-  text-align :center;
-}
-
-.founders img{
-  width: 80%;
-  border-radius: 120px;
 }
