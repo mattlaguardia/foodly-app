@@ -55,6 +55,14 @@ class UsersController < ApplicationController
 		redirect_to new_user_path
 	end
 
+	def about
+		render :about
+	end
+
+	def contact
+		render :contact
+	end
+
 	private
 
 	def user_params
