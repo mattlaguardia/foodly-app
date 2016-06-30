@@ -7,15 +7,21 @@ class ApplicationController < ActionController::Base
   include CanCan::ControllerAdditions
   include SessionsHelper
 
-  def city
-    "San Francisco"
+  def location
+    # response = HTTParty.get "http://ipinfo.io"
+    # json = JSON.parse(response.body)
+    # location = json["city"]
+    location = "San Francisco"
+    return location
   end
 
-  # def search
-  #   @yelp = Yelp.client.search(:city, {term: "restaurants"})
-  #   @yelp.businesses
-  #   render json: @yelp.businesses
-  # end
+  def yelp
+    Yelp.client.search(location, {term: "restaurants"})
+  end
+
+  def search
+    render json: yelp.businesses
+  end
 
   def current_user
     if session[:user_id]
