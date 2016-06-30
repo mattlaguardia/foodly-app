@@ -19,4 +19,9 @@ Rails.application.routes.draw do
   ##STRIPE ROUTES##
   resources :charges
 
+  ## ABOUTME/CONTACT ROUTES##
+  get "/aboutus", to: "users#about"
+  get "/contact", to: "users#contact"
+
+
 end

@@ -21,6 +21,8 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
       <ul class="right hide-on-med-and-down">
+          <li><a href="/aboutus">About Us</a></li>
+          <li><a href="/contact">Contact us</a></li>
         <% if current_user %>
           <li><a href="/users/<%= current_user.id %>">Profile</a></li>
           <li><a href="/users/<%= current_user.id %>/edit">Edit</a></li>
@@ -32,6 +34,7 @@
         <% end %>
       </ul>
       <ul class="side-nav" id="mobile-demo">
+        <li><a href="/aboutus">About Us</a></li>
         <% if current_user %>
           <li><a href="/users/<%= current_user.id %>">Profile</a></li>
           <li><a href="/users/<%= current_user.id %>/edit">Edit</a></li>
