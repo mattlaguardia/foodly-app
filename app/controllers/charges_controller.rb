@@ -4,12 +4,12 @@ class ChargesController < ApplicationController
 
 	def create
 		@amount = 50
-		customer = Stripe::User.create(
+		customer = Stripe::Customer.create(
 			:email => params[:stripeEmail],
 			:source  => params[:stripeToken]
 			)
 		charge = Stripe::Charge.create(
-			:user    => user.id,
+			:customer    => customer.id,
     		:amount      => @amount,
     		:description => 'Rails Stripe customer',
     		:currency    => 'usd'
@@ -19,5 +19,9 @@ class ChargesController < ApplicationController
   			flash[:error] = e.message
   			redirect_to new_charge_path
 		end
+		user = User.find(params[:user_id])
+		customer = Stripe::Customer.find(params[:id])
+		# push customer id into user
+		# if customer id is not nil, show specific views
 	end
 
