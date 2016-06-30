@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
 	def index
-		render :index
+		if !current_user
+			render :index
+		else
+			redirect_to "/users/#{current_user.id}"
+		end
 	end
 
 	def create
