@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630210630) do
+ActiveRecord::Schema.define(version: 20160630221812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160630210630) do
   create_table "dislikes", force: :cascade do |t|
     t.integer "restaurant_id"
     t.integer "user_id"
+    t.string  "yelp"
   end
 
   add_index "dislikes", ["restaurant_id"], name: "index_dislikes_on_restaurant_id", using: :btree
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160630210630) do
   create_table "likes", force: :cascade do |t|
     t.integer "restaurant_id"
     t.integer "user_id"
+    t.string  "yelp"
   end
 
   add_index "likes", ["restaurant_id"], name: "index_likes_on_restaurant_id", using: :btree
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(version: 20160630210630) do
     t.string  "cuisines"
     t.string  "aggregate_rating"
     t.integer "user_id"
+    t.string  "yelp"
   end
 
   create_table "users", force: :cascade do |t|
