@@ -13,10 +13,10 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-
+  ## SEARCH ROUTES ##
   get "/search", to: "application#search"
 
   ##STRIPE ROUTES##
   resources :charges
-  
+
 end

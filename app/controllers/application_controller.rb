@@ -15,11 +15,19 @@ class ApplicationController < ActionController::Base
     'San Francisco'
   end
 
-  def search
-    @yelp =  Yelp.client.search(:city, {term: "food"})
-    @yelp.businesses[1].image_url
-    render json: @yelp.businesses[1].image_url
-  end
+
+  # def search
+  #   @yelp =  Yelp.client.search(:city, {term: "food"})
+  #   @yelp.businesses[1].image_url
+  #   render json: @yelp.businesses[1].image_url
+  # end
+
+  # def search
+  #   @yelp = Yelp.client.search(:city, {term: "restaurants"})
+  #   @yelp.businesses
+  #   render json: @yelp.businesses
+  # end
+
 
   def current_user
     if session[:user_id]

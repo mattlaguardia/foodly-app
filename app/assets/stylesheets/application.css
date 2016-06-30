@@ -110,3 +110,15 @@ nav .brand-logo {
 .signUp{
   margin-top: 0px;
 }
+
+form.button_to{
+  margin: auto 0;
+}
+
+#supreme-bg-image{
+  background: url(https://www.bonappetour.com/assets/images/experiences/1447095355-9619536.jpeg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  max-width: 100%;
+}

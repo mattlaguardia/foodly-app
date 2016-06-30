@@ -1,8 +1,8 @@
 require 'yelp'
 
 Yelp.client.configure do |config|
-  config.consumer_key = YELP_CONSUMER_KEY
-  config.consumer_secret = YELP_CONSUMER_SECRET
-  config.token = YELP_TOKEN
-  config.token_secret = YELP_CONSUMER_SECRET
+  config.consumer_key =  "j5SsKIRZLQzusOiHYbNBlw"
+  config.consumer_secret = "ym399js01IJtLcFEBNAjFKobMFs"
+  config.token = "OtNjMbCgpVQDYbEA-bPe6qZPYE22uX9_"
+  config.token_secret = "BtYkEIXNPDcCTYkETO8RYyGaWoo"
 end
