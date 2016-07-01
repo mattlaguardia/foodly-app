@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
 	def index
-		render :index
+		if !current_user
+			render :index
+		else
+			redirect_to "/users/#{current_user.id}"
+		end
 	end
 
 	def create
@@ -32,6 +36,7 @@ class UsersController < ApplicationController
 		@likes = Like.all
 		@dislikes = Dislike.all
 		@user=User.find(params[:id])
+		@customer = current_user.user_stripe
 		if current_user != User.find(params[:id])
 			redirect_to root_path, flash: {error: "You're not authorized to view that page!"}
 		else
@@ -55,11 +60,18 @@ class UsersController < ApplicationController
 		redirect_to new_user_path
 	end
 
+	def about
+		render :about
+	end
+
+	def contact
+		render :contact
+	end
+
 	private
 
 	def user_params
-		params.require(:user).permit(:username, :email, :first_name, :last_name, :password, :password_confirmation)
+		params.require(:user).permit(:username, :email, :first_name, :last_name, :password, :password_confirmation, :image)
 	end
-
 
 end

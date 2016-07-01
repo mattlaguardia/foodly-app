@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# gem 'jquery_mobile_rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -36,12 +37,20 @@ gem "paperclip"
 # koudoku --> for subscriptions
 gem "koudoku"
 
+# yelp gem
+gem "yelp", require: "yelp"
+
 # stripe --> manages payment and subscriptions
 gem 'stripe'
 
+# httparty gem
+gem "httparty"
 
 # cancancan gem https://github.com/CanCanCommunity/cancancan
 gem "cancancan"
+
+# angular ui gem
+# gem 'angular-ui-bootstrap-rails'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

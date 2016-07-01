@@ -1,18 +1,45 @@
-<%= form_tag charges_path do %>
+
+<section id="supreme-bg-image">
+<div class="parallax-container">
+  <div class="parallax" ></div>
+</div>
+<div class="container row" id="login-form">
+  <div class="col s8" id="login-form-bg">
+  <h4 class="foodlySupreme">Get Foodly Supreme</h4>
+  Want free meals and special offers from your liked restaurants? Sign up for Foodly Supreme.
+  <br>
+  <br>
+  
   <article>
     <% if flash[:error].present? %>
       <div id="error_explanation">
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
-    <label class="amount">
-      <span>Amount: $0.50</span>
-    </label>
   </article>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="50"
-          data-locale="auto"></script>
-<% end %>
+  <form action="/charges" method="POST">
+
+    <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+       data-key="pk_test_aaq2unvoPqvoE0Fil7TPG7nB"
+       data-amount="9900"
+       data-name="PAY NOW"
+       data-description="Montly Subscription"
+       data-image="/img/documentation/checkout/marketplace.png"
+       data-locale="auto">
+       // $ -> 
+       //  for f in $("form")
+       //    if f.method == 'post' or f.method == 'delete'
+       //      $(f).prepend("<input type='hidden' name='authenticity_token' value='" + token + "'>")
+     </script>
+</form>
+
+
+</div>
+</section>
+
+
+
+
+
