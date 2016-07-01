@@ -28,11 +28,15 @@ class RestaurantsController < ApplicationController
     end
   end
 
-  def show
-    create
-    @restaurants = Restaurant.all
-    render :show
-  end
+  def redeem
+    if current_user
+      render :redeem
+    else
+      redirect_to login_path
+    end
+
+
+
 
   private
 

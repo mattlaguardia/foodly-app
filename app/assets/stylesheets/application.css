@@ -29,7 +29,7 @@ img.yelp-img {
   width: 150px;
 }
 .parallax-container {
-  height: 800px;
+  height: 1500px;
 }
 .alert {
   background-color: rgba(250, 74, 74, 0.9);
@@ -76,16 +76,25 @@ img.yelp-img {
   padding-top: 5px;
   width: 100px;
   border-radius: 50%;
+  position: absolute;
+  left: 11%;
+  top: 34%;
 }
 #restaurant-likes {
-  border-bottom: 1px solid #c5c3c3;
+
+  border-top: 1px solid #c5c3c3;
   padding-top: 5px;
+  width:67%;
+  position: relative;
+  left: 15%;
 }
 #restaurant-description {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 10%;
+  padding-bottom: 10%
 }
 #profile-pic-div {
+  margin-bottom: 5%;
+  padding-bottom: 5%;
   align-content: center;
   border-bottom: 1px solid #c5c3c3;
   text-align: center;
@@ -106,10 +115,23 @@ img.yelp-img {
   top: 25%;
   left: 25%;
 }
+
 #login-form-bg {
   background-color: rgba(55, 51, 51, 0.7);
   border-radius: 10px;
   padding-bottom: 10px;
+  margin-top: 14%;
+}
+#profile-content {
+  background-color: rgba(55, 51, 51, 0.7);
+  position: absolute;
+  right: 14%;
+  top: 35%;
+  width: 76%;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  padding: 5%;
+  color: white;
 }
 #login-submit {
   background-color: #327D8F;
@@ -159,4 +181,62 @@ form.button_to{
   background-position: center;
   background-attachment: fixed;
   max-width: 100%;
+}
+
+#likes-count {
+  border-top: 1px solid #c5c3c3;
+}
+#resName {
+  text-align: center;
+  position: relative;
+  left: 11%;
+  margin-top: 3%;
+}
+#username {
+  text-align: center;
+}
+#profile {
+  background: url(http://previews.123rf.com/images/rawpixel/rawpixel1509/rawpixel150905873/45629559-Food-Table-Celebration-Delicious-Party-Meal-Concept-Stock-Photo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  max-width: 100%;
+  height: 2000px;
+}
+
+#aboutuspage {
+  background-color: rgba(55, 51, 51, 0.7);
+  border-radius: 20px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px
+}
+
+#contactpage{
+  background-color: rgba(55, 51, 51, 0.7);
+  border-radius: 20px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px
+}
+.founders {
+  text-align :center;
+}
+
+.founders img{
+  width: 80%;
+  border-radius: 120px;
+}
+#qr {
+  width: 100%;
+}
+#dd {
+  padding-top: 20%;
+  display: inline-block;
+  text-align: center;
+    position: relative;
+}
+.card-img {
+  width: 300px;
 }
