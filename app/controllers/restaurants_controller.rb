@@ -30,8 +30,11 @@ class RestaurantsController < ApplicationController
 
 
   def redeem
-    render :redeem
-  end
+    if current_user
+      render :redeem
+    else
+      redirect_to login_path
+    end
 
   private
 

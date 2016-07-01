@@ -33,7 +33,9 @@
           <p>Cuisine: <%= like.restaurant.cuisines %></p>
           <p>City: <%= like.restaurant.location %></p>
           <p>Rating: <%= like.restaurant.aggregate_rating %></p>
+          <% if @customer %>
           <%= button_to "Redeem Meal", redeem_path, method: "get", class: "btn", id: "deals-button" %>
+          <% end %>
         </div>
       </div>
       <% end %>
