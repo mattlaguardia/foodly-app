@@ -20,11 +20,11 @@ $(document).ready(function(){
   $(".button-collapse").sideNav();
   $('.parallax').parallax();
 
-  $(".like-button").click(function(event){
+  $(".like-button").parent().click(function(event){
     event.preventDefault();
     $target = $(event.target);
     $target.attr("disabled", "true");
-    $form = $target.parent().parent();
+    $form = $target.parent();
 
     $.ajax({
       type: $form.attr('method'),

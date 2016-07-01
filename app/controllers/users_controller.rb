@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
 	def index
-		render :index
+		if !current_user
+			render :index
+		else
+			redirect_to "/users/#{current_user.id}"
+		end
 	end
 
 	def create
@@ -53,6 +57,14 @@ class UsersController < ApplicationController
 		@user=User.find(params[:id])
 		@user.destroy
 		redirect_to new_user_path
+	end
+
+	def about
+		render :about
+	end
+
+	def contact
+		render :contact
 	end
 
 	private

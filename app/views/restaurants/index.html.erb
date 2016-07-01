@@ -1,3 +1,5 @@
+
+
 <div class="container">
   <h2 align="center"> Connect to Food Near By!</h2>
 
@@ -6,7 +8,7 @@
 
 
     <div class="swipe-card col s8">
-      <center>
+
         <div class="col s2 yelp-image-div offset-s3">
           <img class="yelp-img" src="<%=res.featured_image %>">
         </div>
@@ -22,13 +24,13 @@
           <ul>Type: <%=res.cuisines%></ul>
         </div>
       </div>
-    </center>
-    <div class="like-dislike">
-      <%= button_to "  Like  ", likes_path(current_user, res.id), method: "post", class: "btn like-button" %>
-      <%= button_to "Dislike", dislikes_path(current_user, res.id), method: "post", class: "btn dislike-button" %>
-    </div>
-    </div>
+      <div class="like-dislike">
+        <%= link_to "  Like  ", likes_path(current_user, res.id), method: "post", class: "btn like-button" %>
+        <%= link_to "Dislike", dislikes_path(current_user, res.id), method: "post", class: "btn dislike-button" %>
+        <a class="btn" href="#"><i class="material-icons left">cloud</i>click here</a>
+      </div>
 
+    </div>
     <% break %>
     <% end %>
   <% end %>

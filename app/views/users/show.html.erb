@@ -12,19 +12,19 @@
       <div class="profile-name">
         <h2><%= @user.username %>'s likes:</h2>
       </div>
-      
+
 
 <!-- TESTING FOR TABLE -->
     <% @likes.each do |like| %>
       <div class="row col s12" id="restaurant-likes">
-        <div class="col s4">
-          <img src="<%= like.restaurant.thumb_url%>" id="restaurant-image" alt="restaurant image" />
+        <div class="col s3 offset-s1 res-image-user-profile">
+          <img src="<%= like.restaurant.featured_image%>" id="restaurant-image" alt="restaurant image" />
         </div>
-        <div class="col s6" id="restaurant-description">
+        <div class="col s8" id="restaurant-description">
           <%= like.restaurant.name %><br>
           <%= like.restaurant.location %><br>
-          Rating <br>
-          Cuisine
+          Rating: <%= like.restaurant.aggregate_rating %><br>
+          Cuisine: <%= like.restaurant.cuisines %><br>
         </div>
       </div>
     <% end %>
