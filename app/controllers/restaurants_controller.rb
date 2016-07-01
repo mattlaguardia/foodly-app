@@ -34,7 +34,7 @@ class RestaurantsController < ApplicationController
     else
       redirect_to login_path
     end
-
+  end
 
 
 
