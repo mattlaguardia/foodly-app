@@ -1,6 +1,6 @@
-<div class="container">
-  <div>
-    <div class="col s12 offset-1">
+<section id="profile">
+  <div class="container row" id="profile-container">
+    <div class="col s8" id="profile-content">
       <div class="row" id="profile-pic-div">
        <a href="/users/<%=@user.id%>/edit"><%= image_tag @user.image.url(:medium), id: "profile-img" %></a>
       </div>
@@ -9,31 +9,35 @@
           <%= button_to "Get Foodly Supreme", new_charge_path, method: :get, class: "btn", id: "getSupreme" %>
       </div>
       <%end%>
-      <div class="profile-name">
-        <h2><%= @user.username %>'s likes:</h2>
-      </div>
-      
+
 
 <!-- TESTING FOR TABLE -->
+<div>
+
+    <h2 id="username"><%= @user.username %>'s likes</h2>
+  <br>
     <% @likes.each do |like| %>
-      <div class="row col s12" id="restaurant-likes">
+      <div class="row" id="restaurant-likes">
+        <div class="col s8" id="resName">
+        <a href="<%= like.restaurant.thumb_url %>"><h5 style="text-align: center;" id="resName"><%= like.restaurant.name %></h5></a>
+      </div>
+      <br>
         <div class="col s4">
-          <img src="<%= like.restaurant.thumb_url%>" id="restaurant-image" alt="restaurant image" />
+          <img src="<%= like.restaurant.featured_image%>" id="restaurant-image" alt="restaurant image" />
         </div>
-        <div class="col s6" id="restaurant-description">
-          <%= like.restaurant.name %><br>
-          <%= like.restaurant.location %><br>
-          Rating <br>
-          Cuisine
+        <div class="col s4" id="restaurant-description">
+          <p>Cuisine: <%= like.restaurant.cuisines %></p>
+          <p>City: <%= like.restaurant.location %></p>
+          <p>Rating: <%= like.restaurant.aggregate_rating %></p>
         </div>
       </div>
-    <% end %>
-
+      <% end %>
+</div>
 <!-- TESTING FOR D3 -->
-    <div class="row">
+    <div class="row" id="likes-count">
       <ul>
-        <li class="likes-count"><%= @likes.length %></li>
-        <li class="dislikes-count"><%= @dislikes.length %></li>
+        <li class="likes-count">Likes: <%= @likes.length %></li>
+        <li class="dislikes-count">Dislikes: <%= @dislikes.length %></li>
       </ul>
     </div>
 
@@ -42,4 +46,4 @@
 
     </div>
   </div>
-</div>
+</section>

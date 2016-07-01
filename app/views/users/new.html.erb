@@ -14,6 +14,11 @@
     </div>
 
     <div>
+    <h6>Upload Image:</h6><br>
+    <%= f.file_field :image, required: true, class: "formInput" %>
+    </div>
+
+    <div>
       <h6>First Name:</h6><br>
       <%= f.text_field :first_name, class: "formInput" %>
     </div>
@@ -45,7 +50,7 @@
 
     <% end %>
   </div>
- 
-  
+
+
 </div>
 </section>
