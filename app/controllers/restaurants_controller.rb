@@ -12,22 +12,21 @@ class RestaurantsController < ApplicationController
 
 ## POSTS JSON INFO INTO DATABASE FROM YELP ##
   def create
-    ben = yelp.businesses
-    ## ADD IF STATEMENT CHECKING WHATS IN THE DATABASE ##
-    ben.each do |item|
-      c = Restaurant.new(
+    restaurants = yelp.businesses
+    restaurants.each do |item|
+      create = Restaurant.new(
       :name => item.name,
       :location => item.location.neighborhoods,
       :phone_numbers => item.display_phone,
       :featured_image => item.image_url,
       :thumb_url => item.url,
       :cuisines => item.categories,
-      :aggregate_rating => item.rating
+      :aggregate_rating => item.rating,
+      :yelp => item.id
     )
       c.save
     end
   end
-
 
   def redeem
     if current_user
@@ -35,6 +34,9 @@ class RestaurantsController < ApplicationController
     else
       redirect_to login_path
     end
+
+
+
 
   private
 
