@@ -27,7 +27,7 @@ img.yelp-img {
   margin: 0 auto;
 }
 .parallax-container {
-  height: 1000px;
+  height: 1500px;
 }
 .alert {
   background-color: rgba(250, 74, 74, 0.9);
@@ -232,4 +232,20 @@ form.button_to{
 .founders img{
   width: 80%;
   border-radius: 120px;
+}
+#qr {
+  width: 100%;
+}
+#dd {
+  padding-top: 20%;
+  display: inline-block;
+  text-align: center;
+    position: relative;
+}
+.card-img {
+  width: 300px;
+}
+
+.thecard {
+  padding-top: 10%%;
 }
