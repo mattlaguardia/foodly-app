@@ -72,6 +72,11 @@ img.yelp-img {
   background: url(food-on-table.jpg) no-repeat center center fixed;
   background-size: cover;
 }
+.pie-graph {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
 #restaurant-image {
   padding-top: 5px;
   width: 100px;
@@ -159,4 +164,27 @@ form.button_to{
   background-position: center;
   background-attachment: fixed;
   max-width: 100%;
+}
+#aboutuspage{
+ background-color: rgba(55, 51, 51, 0.7);
+ border-radius: 20px;
+ padding-bottom: 10px;
+ padding-left: 10px;
+ padding-right: 10px
+}
+
+#contactpage{
+ background-color: rgba(55, 51, 51, 0.7);
+ border-radius: 20px;
+ padding-bottom: 10px;
+ padding-left: 10px;
+ padding-right: 10px
+}
+.founders {
+ text-align :center;
+}
+
+.founders img{
+ width: 80%;
+ border-radius: 120px;
 }

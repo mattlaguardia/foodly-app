@@ -32,9 +32,9 @@
           </div>
           <div class="col s8" id="restaurant-description">
             <%= like.restaurant.name %><br>
-            <%= like.restaurant.location %><br>
+            <%= like.restaurant.location.gsub(/[^0-9A-Za-z]/,' ') %><br>
             Rating: <%= like.restaurant.aggregate_rating %><br>
-            Cuisine: <%= like.restaurant.cuisines %><br>
+            Cuisine: <%= like.restaurant.cuisines.gsub(/[^0-9A-Za-z]/,' ') %><br>
           </div>
         </div>
       <% end %>
@@ -48,8 +48,7 @@
       </ul>
     </div>
 
-    <div class="pie-graph">
-    </div>
+    <div class="pie-graph"></div>
 
     </div>
   </div>
