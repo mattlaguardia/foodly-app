@@ -85,18 +85,7 @@ img.yelp-img {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-#profile-pic-div {
-  align-content: center;
-  border-bottom: 1px solid #c5c3c3;
-  text-align: center;
-}
-#profile-img {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 50%;
-  width: 200px;
-  position: inherit;
-}
+
 #res-card {
   align-items: center;
 }
@@ -161,12 +150,13 @@ form.button_to{
   max-width: 100%;
 }
 
-#aboutuspage{
-  background-color: rgba(55, 51, 51, 0.7);
-  border-radius: 20px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px
+
+#aboutuspage {
+ background-color: rgba(55, 51, 51, 0.7);
+ border-radius: 20px;
+ padding-bottom: 10px;
+ padding-left: 10px;
+ padding-right: 10px
 }
 
 #contactpage{
@@ -184,3 +174,59 @@ form.button_to{
   width: 80%;
   border-radius: 120px;
 }
+
+#profile-pic-div {
+ margin-bottom: 5%;
+ padding-bottom: 5%;
+ align-content: center;
+ border-bottom: 1px solid #c5c3c3 ;
+ text-align: center;
+}
+#profile-img {
+ padding-top: 10px;
+ padding-bottom: 10px;
+ border-radius: 50%;
+ width: 200px;
+ position: inherit;
+}
+
+#profile-content {
+ background-color: rgba(55, 51, 51, 0.7);
+ position: absolute;
+ right: 14%;
+ top: 35%;
+ width: 76%;
+ border-radius: 10px;
+ padding-bottom: 10px;
+ padding: 5%;
+ color: white;
+}
+
+#profile {
+ background: url(http://previews.123rf.com/images/rawpixel/rawpixel1509/rawpixel150905873/45629559-Food-Table-Celebration-Delicious-Party-Meal-Concept-Stock-Photo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  max-width: 100%;
+  height: 2000px;
+ }
+
+ #likes-count {
+ border-top: 1px solid #c5c3c3 ;
+}
+
+#resName {
+ text-align: center;
+ position: relative;
+ left: 11%;
+ margin-top: 3%;
+}
+ #username {
+  text-align: center;
+ }
+
+
+ .parallax-container {
+  height: 2000px;
+ }

@@ -13,29 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require d3
+//= require_tree .
 
 $(document).ready(function(){
   $(".button-collapse").sideNav();
   $('.parallax').parallax();
 
-  $(".like-button").parent().click(function(event){
-    event.preventDefault();
-    $target = $(event.target);
-    $target.attr("disabled", "true");
-    $form = $target.parent();
-
-    $.ajax({
-      type: $form.attr('method'),
-      url: $form.attr('action'),
-      data: $form
-      dataType: "JSON"
-    }).done(function(res){
-      console.log(res);
-      // $form.parent().children('').html(res.likes);
-    });
-  });
 
   $(function(){
     $(".like-button").on("click", function(event){
@@ -47,8 +31,56 @@ $(document).ready(function(){
      console.log("Swiped!")
     });
   })
-  // $(".swipe-card").on("load", function(){
-  //   $(this).sibling("div").hide()
-  // })
+
   // AJAX CALL TO RENDER IN REAL TIME WITHOUT A PAGE REFRESH //
 })
+
+var likes = $(".likes-count").text();
+console.log(likes);
+var dislikes = $(".dislikes-count").text();
+console.log(dislikes)
+
+var w = 300,
+  h = 300,
+  r = 100,
+  color = d3.scale.category20c();
+
+  data = [{"label":"likes", "value":likes},
+          {"label":"dislikes", "value":dislikes}];
+
+   var dataSelect = d3.select(".likes-count")
+   console.log(dataSelect)
+
+    var vis = d3.select(".pie-graph")
+        .append("svg:svg")              //create the SVG element inside the <body>
+        .data([data])                   //associate our data with the document
+            .attr("width", w)           //set the width and height of our visualization (these will be attributes of the <svg> tag
+            .attr("height", h)
+        .append("svg:g")                //make a group to hold our pie chart
+            .attr("transform", "translate(" + r + "," + r + ")")    //move the center of the pie chart from 0, 0 to radius, radius
+
+    var arc = d3.svg.arc()              //this will create <path> elements for us using arc data
+        .outerRadius(r);
+
+    var pie = d3.layout.pie()           //this will create arc data for us given a list of values
+        .value(function(d) { return d.value; });    //we must tell it out to access the value of each element in our data array
+
+    var arcs = vis.selectAll("g.slice")     //this selects all <g> elements with class slice (there aren't any yet)
+        .data(pie)                          //associate the generated pie data (an array of arcs, each having startAngle, endAngle and value properties)
+        .enter()                            //this will create <g> elements for every "extra" data element that should be associated with a selection. The result is creating a <g> for every object in the data array
+            .append("svg:g")                //create a group to hold each slice (we will have a <path> and a <text> element associated with each slice)
+                .attr("class", "slice");    //allow us to style things in the slices (like text)
+
+        arcs.append("svg:path")
+                .attr("fill", function(d, i) { return color(i); } ) //set the color for each slice to be chosen from the color function defined above
+                .attr("d", arc);                                    //this creates the actual SVG path using the associated data (pie) with the arc drawing function
+
+        arcs.append("svg:text")                                     //add a label to each slice
+                .attr("transform", function(d) {                    //set the label's origin to the center of the arc
+                                                                    //we have to make sure to set these before calling arc.centroid
+                d.innerRadius = 0;
+                d.outerRadius = r;
+                return "translate(" + arc.centroid(d) + ")";        //this gives us a pair of coordinates like [50, 50]
+            })
+            .attr("text-anchor", "middle")                          //center the text on it's origin
+            .text(function(d, i) { return data[i].label; });        //get the label from our original data array

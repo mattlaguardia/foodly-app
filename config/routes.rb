@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   root to: 'users#index'
+  get "restaurants/redeem", to: "restaurants#redeem", as: "redeem"
+
 
   resources :users
   resources :restaurants

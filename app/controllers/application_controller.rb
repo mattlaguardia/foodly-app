@@ -8,10 +8,9 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   def location
-    # response = HTTParty.get "http://ipinfo.io"
-    # json = JSON.parse(response.body)
-    # location = json["city"]
-    location = "San Francisco"
+    response = HTTParty.get "http://ipinfo.io"
+    json = JSON.parse(response.body)
+    location = json["city"]
     return location
   end
 
