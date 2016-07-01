@@ -4,22 +4,15 @@
       <div class="row" id="profile-pic-div">
        <a href="/users/<%=@user.id%>/edit"><%= image_tag @user.image.url(:medium), id: "profile-img" %></a>
       </div>
-      <div>
-        <% if current_user %>
-          <%= button_to "Get Foodly Supreme", new_charge_path, method: :get, class: "btn", id: "getSupreme" %>
-        <%end%>
-      </div>
-
 
 <!-- TESTING FOR TABLE -->
 <div>
-
   <div>
     <% if current_user %>
-    <% if !@customer %>
-    <%= button_to "Get Foodly Supreme", new_charge_path, method: :get, class: "btn", id: "getSupreme" %>
+      <% if !@customer %>
+      <%= button_to "Get Foodly Supreme", new_charge_path, method: :get, class: "btn", id: "getSupreme" %>
   </div>
-  <%end%>
+    <%end%>
   <%end%>
     <h2 id="username"><%= @user.username %>'s likes</h2>
   <br>
@@ -44,25 +37,6 @@
       <% end %>
 </div>
 
-    <div class="row" id="likes-count">
-      <ul>
-        <li class="likes-count">Likes: <%= @likes.length %></li>
-        <li class="dislikes-count">Dislikes: <%= @dislikes.length %></li>
-      <% if like.user_id == @user.id %>
-        <div class="row col s12" id="restaurant-likes">
-          <div class="col s3 offset-s1 res-image-user-profile">
-            <img src="<%= like.restaurant.featured_image%>" id="restaurant-image" alt="restaurant image" />
-          </div>
-          <div class="col s8" id="restaurant-description">
-            <%= like.restaurant.name %><br>
-            <%= like.restaurant.location.gsub(/[^0-9A-Za-z]/,' ') %><br>
-            Rating: <%= like.restaurant.aggregate_rating %><br>
-            Cuisine: <%= like.restaurant.cuisines.gsub(/[^0-9A-Za-z]/,' ') %><br>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-
 <!-- TESTING FOR D3 -->
     <div class="row" style="display: none;">
       <ul>
@@ -71,7 +45,8 @@
       </ul>
     </div>
 
-    <div class="pie-graph"></div>
+    <div class="pie-graph">
+    </div>
 
     </div>
   </div>
