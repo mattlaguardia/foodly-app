@@ -1,12 +1,8 @@
-<section id="new-user-bg-image">
-<div class="parallax-container">
-  <div class="parallax" ></div>
-</div>
+<div class="new-user-bg-image">
 <div class="container row" id="login-form">
+  <%= form_for @user do |f| %>
   <div class="col s8" id="login-form-bg">
   <h4 class="signUp">Signup</h4>
-
-    <%= form_for @user do |f| %>
 
     <div>
       <h6>Username:</h6><br>
@@ -38,13 +34,19 @@
       <%= f.password_field :password_confirmation, class: "formInput" %>
     </div>
 
-<div>
-<%= f.submit "Sign up", :class => "button z-depth-0 btn" %>
-</div>
+    <div>
+      <h6>Upload a photo:</h6>
+      <%= f.file_field :image%>
+    </div><br>
 
-
-    <% end %>
+  <div>
+    <%= f.submit "Sign up", :class => "button z-depth-0 btn" %>
   </div>
+
+
+  </div>
+  <% end %>
+
 
 
 </div>

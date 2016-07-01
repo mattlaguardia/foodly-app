@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 	BCrypt::Engine.cost = 12
 	has_secure_password
 
-	has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100#" }, default_url: "300x300.png"
+	has_attached_file :image, styles: { medium: "300x300#", thumb: "100x100#" }, default_url: "300x300.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 	def self.confirm(email, password)
