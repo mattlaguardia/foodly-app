@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require d3
+//= require_tree .
 
 $(document).ready(function(){
   $(".button-collapse").sideNav();
@@ -47,8 +47,5 @@ $(document).ready(function(){
      console.log("Swiped!")
     });
   })
-  // $(".swipe-card").on("load", function(){
-  //   $(this).sibling("div").hide()
-  // })
   // AJAX CALL TO RENDER IN REAL TIME WITHOUT A PAGE REFRESH //
 })

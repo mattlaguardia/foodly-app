@@ -7,13 +7,19 @@
       <div>
         <% if current_user %>
           <%= button_to "Get Foodly Supreme", new_charge_path, method: :get, class: "btn", id: "getSupreme" %>
+        <%end%>
       </div>
-      <%end%>
 
-      <% if !@user.likes.length && !@user.likes.length %>
-      <div class="profile-name">
-        <h2><%= @user.username %>'s likes:</h2>
-      </div>
+      <% if @user.likes.length === 0 && @user.dislikes.length === 0 %>
+        <div class="profile-name">
+          <h2><%= @user.username %>'s likes:</h2>
+        </div>
+      <% else %>
+        <div class="profile-name">
+          <p>
+            Welcome <%= @user.username %> to foodly! Your new home to come explore and create relationships with restaurants around you!
+          </p>
+        </div>
       <% end %>
 
 
