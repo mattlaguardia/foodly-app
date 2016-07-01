@@ -1,37 +1,32 @@
-
-
 <div class="container">
   <h2 align="center"> Connect to Food Near By!</h2>
+    <% @restaurants.each do |res| %>
+      <% if !current_user.restaurant_likes.include?(res) && !current_user.restaurant_dislikes.include?(res) %>
+        <% if res.yelp != current_user.restaurant_likes %>
+          <div class="swipe-card col s8">
+              <div class="col s2 yelp-image-div offset-s3">
+                <img class="yelp-img" src="<%=res.featured_image %>">
+              </div>
 
-  <% @restaurants.each do |res| %>
-    <% if !current_user.restaurant_likes.include?(res) && !current_user.restaurant_dislikes.include?(res) %>
-    <% if res.yelp != current_user.restaurant_likes %>
+              <div class="col s5">
+                <h5><%=res.name%></h5><form action="index.html" method="post"></form>
+                <p><%=res.location.gsub(/[^0-9A-Za-z]/,' ')%></p>
+              </div>
 
-    <div class="swipe-card col s8">
-
-        <div class="col s2 yelp-image-div offset-s3">
-          <img class="yelp-img" src="<%=res.featured_image %>">
-        </div>
-
-        <div class="col s5">
-          <h5><%=res.name%></h5><form action="index.html" method="post"></form>
-          <p><%=res.location%></p>
-        </div>
-
-      <div class="col s8 offset-3">
-        <div class="col s6" id="yelp-description">
-          <ul>Rating: <%=res.aggregate_rating%></ul>
-          <ul>Type: <%=res.cuisines%></ul>
-        </div>
-      </div>
-    </center>
-    <div class="like-dislike">
-      <%= button_to "  Like  ", likes_path(current_user, res.id, res.yelp), method: "post", class: "btn like-button" %>
-      <%= button_to "Dislike", dislikes_path(current_user, res.id, res.yelp), method: "post", class: "btn dislike-button" %>
-    </div>
-    </div>
-    <% end %>
-    <% break %>
+            <div class="col s8 offset-3">
+              <div class="col s6" id="yelp-description">
+                <ul>Rating: <%=res.aggregate_rating%></ul>
+                <ul>Type: <%=res.cuisines.gsub(/[^0-9A-Za-z]/,' ')%></ul>
+              </div>
+            </div>
+          </center>
+            <div class="like-dislike">
+              <%= button_to "  Like  ", likes_path(current_user, res.id, res.yelp), method: "post", class: "btn like-button" %>
+              <%= button_to "Dislike", dislikes_path(current_user, res.id, res.yelp), method: "post", class: "btn dislike-button" %>
+            </div>
+          </div>
+        <% end %>
+      <% break %>
     <% end %>
   <% end %>
 </div>

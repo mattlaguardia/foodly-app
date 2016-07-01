@@ -12,10 +12,9 @@ class RestaurantsController < ApplicationController
 
 ## POSTS JSON INFO INTO DATABASE FROM YELP ##
   def create
-    ben = yelp.businesses
-    ## ADD IF STATEMENT CHECKING WHATS IN THE DATABASE ##
-    ben.each do |item|
-      c = Restaurant.new(
+    restaurants = yelp.businesses
+    restaurants.each do |item|
+      create = Restaurant.new(
       :name => item.name,
       :location => item.location.neighborhoods,
       :phone_numbers => item.display_phone,

@@ -8,5 +8,4 @@ class Restaurant < ActiveRecord::Base
 
 	## ADD VALIDATION FOR UNIQUENESS FOR YELP ##
 	validates :yelp, presence:true, uniqueness:true
-
 end

@@ -25,6 +25,8 @@ img.yelp-img {
   border-radius: 50%;
   display: block;
   margin: 0 auto;
+  height: 150px;
+  width: 150px;
 }
 .parallax-container {
   height: 800px;
@@ -141,16 +143,10 @@ nav .brand-logo {
   clear: both;
 }
 
-#new-user-bg-image{
-  background: url(https://format-com-cld-res.cloudinary.com/image/private/s--A6k4TGjT--/c_limit,g_center,h_65535,w_1600/a_auto,fl_keep_iptc.progressive,q_95/161920-9403977-overhead_2_food_jpg.jpg) no-repeat;
+.new-user-bg-image{
+  background: url(food-on-table.jpg) no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  max-width: 100%;
-}
-
-.signUp{
-  margin-top: 0px;
+  height: 1000px;
 }
 
 form.button_to{
