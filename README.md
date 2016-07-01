@@ -2,7 +2,14 @@
 
 Hello there! We are team m2The4th and we'd like to present to you our third project for the WDI program.
 
-Foodly is an user-friendly/mobile-friendly app that can be used to search nearby restaurants. Users can either like or dislike the restaurant before another restaurant can be shown. Restaurants that are liked are saved on the user's profile where it can be viewed later. See a restaurant that you liked but never been? Well now that you know about you can try it out!
+Foodly is an user-friendly/mobile-friendly app that can be used to search nearby restaurants. Users can either like or dislike the restaurant before another restaurant can be shown. Restaurants that are liked are saved on the user's profile where it can be viewed later. See a restaurant that you liked but never been? Well now that you know about it, you can try it out!
+
+![alt tag](https://s32.postimg.org/y0upthv45/Screen_Shot_2016_06_30_at_7_07_37_PM.png)
+
+![alt tag](https://s31.postimg.org/4xb000ukr/Screen_Shot_2016_06_30_at_7_14_08_PM.png)
+
+![alt tag](https://s31.postimg.org/gidd28imz/Screen_Shot_2016_06_30_at_7_22_11_PM.png)
+
 
 ### Team m2The4th
 
