@@ -5,7 +5,7 @@
     <% if !current_user.restaurant_likes.include?(res) && !current_user.restaurant_dislikes.include?(res) %>
 
 
-    <div class="swipe-card col s8">
+    <div class="swipe-card col s8 animate">
       <center>
         <div class="col s2 yelp-image-div offset-s3">
           <img class="yelp-img" src="<%=res.featured_image %>">
@@ -23,13 +23,15 @@
         </div>
       </div>
     </center>
+    </div>
+    <br>
     <div class="like-dislike">
       <%= button_to "  Like  ", likes_path(current_user, res.id), method: "post", class: "btn like-button" %>
       <%= button_to "Dislike", dislikes_path(current_user, res.id), method: "post", class: "btn dislike-button" %>
-    </div>
     </div>
 
     <% break %>
     <% end %>
   <% end %>
 </div>
+<br>

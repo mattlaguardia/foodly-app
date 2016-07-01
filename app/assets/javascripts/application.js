@@ -16,39 +16,15 @@
 //= require_tree .
 //= require d3
 
+
 $(document).ready(function(){
   $(".button-collapse").sideNav();
   $('.parallax').parallax();
 
-  $(".like-button").click(function(event){
-    event.preventDefault();
-    $target = $(event.target);
-    $target.attr("disabled", "true");
-    $form = $target.parent().parent();
+  console.log("working")
 
-    $.ajax({
-      type: $form.attr('method'),
-      url: $form.attr('action'),
-      data: $form
-      dataType: "JSON"
-    }).done(function(res){
-      console.log(res);
-      // $form.parent().children('').html(res.likes);
-    });
   });
 
-  $(function(){
-    $(".like-button").on("click", function(event){
-      console.log("Swiped!")
-    });
-  })
-  $(function(){
-    $(".dislike-button").on("click", function(event){
-     console.log("Swiped!")
-    });
-  })
-  // $(".swipe-card").on("load", function(){
-  //   $(this).sibling("div").hide()
-  // })
-  // AJAX CALL TO RENDER IN REAL TIME WITHOUT A PAGE REFRESH //
+$(".swipe-card").on("click", function(){
+  $(this).addClass("rollOut")
 })
