@@ -10,6 +10,8 @@
   <%end%>
       <div class="row" id="profile-pic-div">
        <a href="/users/<%=@user.id%>/edit"><%= image_tag @user.image.url(:medium), id: "profile-img" %></a>
+       <br>
+       <a class= 'btn' id="editLink" href="/users/<%= current_user.id %>/edit">Edit Profile</a>
       </div>
 <div>
     <h2 id="username"><%= @user.username %>'s likes</h2>

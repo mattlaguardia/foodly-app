@@ -4,7 +4,7 @@ class RestaurantsController < ApplicationController
     if current_user == nil
 			redirect_to root_path, flash: {error: "You're not signed in!"}
 		else
-      # create
+      create
       @restaurants = Restaurant.all
       render :index
     end
@@ -24,7 +24,7 @@ class RestaurantsController < ApplicationController
         :aggregate_rating => item.rating,
         :yelp => item.id
       )
-      c.save
+      create.save
     end
   end
 

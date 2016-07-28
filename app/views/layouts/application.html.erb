@@ -23,7 +23,6 @@
           <li><a href="/aboutus">About Us</a></li>
         <% if current_user %>
           <li><a href="/users/<%= current_user.id %>">Profile</a></li>
-          <li><a href="/users/<%= current_user.id %>/edit">Edit</a></li>
           <li><a href="/restaurants">Restaurants</a></li>
           <li><%= link_to "Log Out", logout_path, method: "delete" %> </li>
         <% else %>
