@@ -23,9 +23,13 @@ input.formInput {
 }
 img.yelp-img {
   border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  height: 150px;
+  width: 150px;
 }
 .parallax-container {
-  height: 800px;
+  height: 1500px;
 }
 .alert {
   background-color: rgba(250, 74, 74, 0.9);
@@ -33,29 +37,69 @@ img.yelp-img {
   font-size: 20px;
 }
 .yelp-image-div {
-  position: center;
-  left: 25%;
+  padding: 20px;
 }
 .swipe-card {
   border: 1px solid #c5c3c3;
+  text-align: center;
 }
 .swiped {
   background-color: red;
+}
+.edit-profile-img {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 50%;
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+.edit-form {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.edit-header {
+  border-bottom: 1px solid #ffffff;
+}
+.edit-form-bg {
+  border-radius: 10px;
+  background-color: rgba(55, 51, 51, 0.9);
+  padding-bottom: 10px;
+  color: white;
+}
+.bg-image-edit {
+  background: url(food-on-table.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+.pie-graph {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }
 #restaurant-image {
   padding-top: 5px;
   width: 100px;
   border-radius: 50%;
+  position: absolute;
+  left: 11%;
+  top: 34%;
 }
 #restaurant-likes {
+
   border-top: 1px solid #c5c3c3;
-  border-bottom: 1px solid #c5c3c3;
   padding-top: 5px;
+  width:67%;
+  position: relative;
+  left: 15%;
 }
 #restaurant-description {
-  padding-top: 10px;
+  padding-top: 10%;
+  padding-bottom: 10%
 }
 #profile-pic-div {
+  margin-bottom: 5%;
+  padding-bottom: 5%;
   align-content: center;
   border-bottom: 1px solid #c5c3c3;
   text-align: center;
@@ -76,10 +120,23 @@ img.yelp-img {
   top: 25%;
   left: 25%;
 }
+
 #login-form-bg {
   background-color: rgba(55, 51, 51, 0.7);
   border-radius: 10px;
   padding-bottom: 10px;
+  margin-top: 14%;
+}
+#profile-content {
+  background-color: rgba(55, 51, 51, 0.7);
+  position: absolute;
+  right: 14%;
+  top: 35%;
+  width: 76%;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  padding: 5%;
+  color: white;
 }
 #login-submit {
   background-color: #327D8F;
@@ -99,6 +156,9 @@ img.yelp-img {
 .like-button{
   float: right;
 }
+.dislike-button{
+  float: left;
+}
 
 nav .brand-logo {
   padding-left: 25px;
@@ -110,16 +170,10 @@ nav .brand-logo {
   clear: both;
 }
 
-#new-user-bg-image{
-  background: url(https://format-com-cld-res.cloudinary.com/image/private/s--A6k4TGjT--/c_limit,g_center,h_65535,w_1600/a_auto,fl_keep_iptc.progressive,q_95/161920-9403977-overhead_2_food_jpg.jpg) no-repeat;
+.new-user-bg-image{
+  background: url(food-on-table.jpg) no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  max-width: 100%;
-}
-
-.signUp{
-  margin-top: 0px;
+  height: 1000px;
 }
 
 form.button_to{
@@ -133,8 +187,53 @@ form.button_to{
   background-attachment: fixed;
   max-width: 100%;
 }
-
 #aboutuspage{
+ background-color: rgba(55, 51, 51, 0.7);
+ border-radius: 20px;
+ padding-bottom: 10px;
+ padding-left: 10px;
+ padding-right: 10px
+}
+
+#contactpage{
+ background-color: rgba(55, 51, 51, 0.7);
+ border-radius: 20px;
+ padding-bottom: 10px;
+ padding-left: 10px;
+ padding-right: 10px
+}
+.founders {
+ text-align :center;
+}
+
+.founders img{
+ width: 80%;
+ border-radius: 120px;
+}
+
+#likes-count {
+  border-top: 1px solid #c5c3c3;
+}
+#resName {
+  text-align: center;
+  position: relative;
+  left: 11%;
+  margin-top: 3%;
+}
+#username {
+  text-align: center;
+}
+#profile {
+  background: url(http://previews.123rf.com/images/rawpixel/rawpixel1509/rawpixel150905873/45629559-Food-Table-Celebration-Delicious-Party-Meal-Concept-Stock-Photo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  max-width: 100%;
+  height: 2000px;
+}
+
+#aboutuspage {
   background-color: rgba(55, 51, 51, 0.7);
   border-radius: 20px;
   padding-bottom: 10px;
@@ -156,4 +255,16 @@ form.button_to{
 .founders img{
   width: 80%;
   border-radius: 120px;
+}
+#qr {
+  width: 100%;
+}
+#dd {
+  padding-top: 20%;
+  display: inline-block;
+  text-align: center;
+    position: relative;
+}
+.card-img {
+  width: 300px;
 }

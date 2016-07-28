@@ -1,40 +1,39 @@
-
-
-
-Edit Profile
-
-<%= form_for @user do |f| %>
-
-<div>
-  <%= f.text_field :username, placeholder: "Display Name" %>
+<div class="bg-image-edit">
+  <div class="container edit-form">
+    <%= form_for @user do |f| %>
+    <div class="edit-form-bg col s12">
+      <div class="col s4 edit-header">
+        <%= image_tag @user.image.url(:medium), class: "edit-profile-img" %>
+      </div>
+      <div class="container">
+        <div class="col s8">
+          <h5>Hi, <%= @user.username %>, update your profile here:</h5>
+        </div>
+        <div class="col s6">
+          <%= f.file_field :image %>
+        </div>
+        <div class="col s6">
+          <%= f.text_field :username, placeholder: "Display Name", class: "formInput" %>
+        </div>
+        <div class="col s6">
+          <%= f.text_field :first_name, placeholder: "First Name", class: "formInput" %>
+        </div>
+        <div class="col s6">
+          <%= f.text_field :last_name, placeholder: "Last Name", class: "formInput" %>
+        </div>
+        <div class="col s6">
+          <%= f.text_field :email, placeholder: "Email", class: "formInput" %>
+        </div>
+        <div class="col s6">
+          <%= f.password_field :password, placeholder: "Password", class: "formInput" %>
+        </div>
+        <div class="col s6">
+          <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "formInput" %>
+        </div>
+        <div class="edit-form-buttons">
+        <%= f.submit "Submit New Info", class: "btn" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
-
-<div>
-  <%= f.text_field :first_name, placeholder: "First Name" %>
-</div>
-
-<div>
-  <%= f.text_field :last_name, placeholder: "Last Name" %>
-</div>
-
-<div>
-  <%= f.text_field :email, placeholder: "Email" %>
-</div>
-
-<div>
-  <%= f.password_field :password, placeholder: "Password" %>
-</div>
-
-<div>
-  <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
-</div>
-
-<div>
-<%= f.submit "Edit User Info", :class => "button" %>
-</div>
-
-<div>
-  <%= button_to "Delete User", new_user_path, method: :delete %>
-</div>
-
-<% end %>

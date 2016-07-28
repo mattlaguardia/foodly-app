@@ -6,12 +6,13 @@ class ApplicationController < ActionController::Base
 
   include CanCan::ControllerAdditions
   include SessionsHelper
+  require 'json'
+  require 'open-uri'
 
   def location
-    # response = HTTParty.get "http://ipinfo.io"
-    # json = JSON.parse(response.body)
-    # location = json["city"]
-    location = "San Francisco"
+    response = HTTParty.get "http://ipinfo.io"
+    json = JSON.parse(response.body)
+    location = json["city"]
     return location
   end
 
@@ -22,6 +23,8 @@ class ApplicationController < ActionController::Base
   def search
     render json: yelp.businesses
   end
+
+
 
   def current_user
     if session[:user_id]
