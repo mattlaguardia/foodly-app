@@ -15,15 +15,15 @@ class RestaurantsController < ApplicationController
     restaurants = yelp.businesses
     restaurants.each do |item|
       create = Restaurant.new(
-      :name => item.name,
-      :location => item.location.neighborhoods,
-      :phone_numbers => item.display_phone,
-      :featured_image => item.image_url,
-      :thumb_url => item.url,
-      :cuisines => item.categories,
-      :aggregate_rating => item.rating,
-      :yelp => item.id
-    )
+        :name => item.name,
+        :location => item.location.neighborhoods,
+        :phone_numbers => item.display_phone,
+        :featured_image => item.image_url,
+        :thumb_url => item.url,
+        :cuisines => item.categories,
+        :aggregate_rating => item.rating,
+        :yelp => item.id
+      )
       c.save
     end
   end
