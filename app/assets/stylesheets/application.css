@@ -14,6 +14,10 @@
  *= require_self
  */
 
+#aboutus{
+  padding-top: 30px;
+}
+
 nav {
   background-color: #1D374F;
 }
@@ -224,7 +228,7 @@ form.button_to{
   text-align: center;
 }
 #profile {
-  background: url(http://previews.123rf.com/images/rawpixel/rawpixel1509/rawpixel150905873/45629559-Food-Table-Celebration-Delicious-Party-Meal-Concept-Stock-Photo.jpg);
+  background: url(http://i.huffpost.com/gen/1885916/images/o-FOOD-facebook.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
