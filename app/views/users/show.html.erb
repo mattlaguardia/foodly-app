@@ -1,19 +1,19 @@
 <section id="profile">
   <div class="container row" id="profile-container">
     <div class="col s8" id="profile-content">
-      <div class="row" id="profile-pic-div">
-       <a href="/users/<%=@user.id%>/edit"><%= image_tag @user.image.url(:medium), id: "profile-img" %></a>
-      </div>
-
-<!-- TESTING FOR TABLE -->
-<div>
-  <div>
+      <div>
     <% if current_user %>
       <% if !@customer %>
       <%= button_to "Get Foodly Supreme", new_charge_path, method: :get, class: "btn", id: "getSupreme" %>
   </div>
     <%end%>
   <%end%>
+      <div class="row" id="profile-pic-div">
+       <a href="/users/<%=@user.id%>/edit"><%= image_tag @user.image.url(:medium), id: "profile-img" %></a>
+       <br>
+       <a class= 'btn' id="editLink" href="/users/<%= current_user.id %>/edit">Edit Profile</a>
+      </div>
+<div>
     <h2 id="username"><%= @user.username %>'s likes</h2>
   <br>
     <% @likes.each do |like| %>

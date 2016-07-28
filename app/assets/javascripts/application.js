@@ -16,10 +16,10 @@
 //= require d3
 //= require_tree .
 
+
 $(document).ready(function(){
   $(".button-collapse").sideNav();
   $('.parallax').parallax();
-
   $(function(){
     $(".like-button").on("click", function(event){
       console.log("Swiped!")

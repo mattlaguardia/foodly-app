@@ -4,7 +4,7 @@ class RestaurantsController < ApplicationController
     if current_user == nil
 			redirect_to root_path, flash: {error: "You're not signed in!"}
 		else
-      # create
+      create
       @restaurants = Restaurant.all
       render :index
     end
@@ -15,16 +15,16 @@ class RestaurantsController < ApplicationController
     restaurants = yelp.businesses
     restaurants.each do |item|
       create = Restaurant.new(
-      :name => item.name,
-      :location => item.location.neighborhoods,
-      :phone_numbers => item.display_phone,
-      :featured_image => item.image_url,
-      :thumb_url => item.url,
-      :cuisines => item.categories,
-      :aggregate_rating => item.rating,
-      :yelp => item.id
-    )
-      c.save
+        :name => item.name,
+        :location => item.location.neighborhoods,
+        :phone_numbers => item.display_phone,
+        :featured_image => item.image_url,
+        :thumb_url => item.url,
+        :cuisines => item.categories,
+        :aggregate_rating => item.rating,
+        :yelp => item.id
+      )
+      create.save
     end
   end
 
