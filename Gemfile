@@ -49,6 +49,9 @@ gem "httparty"
 # cancancan gem https://github.com/CanCanCommunity/cancancan
 gem "cancancan"
 
+# dotenv gem for environment variables
+gem "dotenv-rails", :require => 'dotenv/rails-now'
+
 # angular ui gem
 # gem 'angular-ui-bootstrap-rails'
 
