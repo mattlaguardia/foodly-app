@@ -64,10 +64,6 @@ class UsersController < ApplicationController
 		render :about
 	end
 
-	def contact
-		render :contact
-	end
-
 	private
 
 	def user_params

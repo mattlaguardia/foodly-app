@@ -9,6 +9,8 @@
   <!-- LOCAL LINKS -->
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <!-- Google Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
   <nav class="z-depth-0">
@@ -19,10 +21,8 @@
       </div>
       <ul class="right hide-on-med-and-down">
           <li><a href="/aboutus">About Us</a></li>
-          <li><a href="/contact">Contact us</a></li>
         <% if current_user %>
           <li><a href="/users/<%= current_user.id %>">Profile</a></li>
-          <li><a href="/users/<%= current_user.id %>/edit">Edit</a></li>
           <li><a href="/restaurants">Restaurants</a></li>
           <li><%= link_to "Log Out", logout_path, method: "delete" %> </li>
         <% else %>
@@ -54,9 +54,11 @@
 <%= yield %>
 
 <!-- VENDOR JAVASCRIPTS -->
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <script src = "https://code.jquery.com/jquery-3.0.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 </body>
+
 </html>
