@@ -20,7 +20,7 @@ Foodly is an user-friendly/mobile-friendly app that can be used to search nearby
 
 ### App Link
 
-AWS App Link : [Will post up when deployed]
+Hosted on Heroku: foodly-app.herokuapp.com
 
 ### Technologies:
 
