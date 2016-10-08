@@ -4,7 +4,7 @@ Hello there! We are team m2The4th and we'd like to present to you our third proj
 
 ### App Link
 
-Hosted on Heroku: http://www.foodly-app.herokuapp.com
+Hosted on Heroku: https://.foodly-app.herokuapp.com
 
 Foodly is an user-friendly/mobile-friendly app that can be used to search nearby restaurants. Users can either like or dislike the restaurant before another restaurant can be shown. Restaurants that are liked are saved on the user's profile where it can be viewed later. See a restaurant that you liked but never been? Well now that you know about it, you can try it out!
 
