@@ -9,16 +9,16 @@ class ApplicationController < ActionController::Base
   require 'json'
   require 'open-uri'
 
-  def location
-    response = HTTParty.get "http://ipinfo.io"
-    json = JSON.parse(response.body)
-    location = json["city"]
-    print location
-    return location
-  end
+  # def location
+  #   response = HTTParty.get "http://ipinfo.io"
+  #   json = JSON.parse(response.body)
+  #   location = json["city"]
+  #   print location
+  #   return location
+  # end
 
   def yelp
-    Yelp.client.search(location, {term: "restaurants"})
+    Yelp.client.search("San Francisco", {term: "restaurants"})
   end
 
   def search
