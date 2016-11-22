@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
     response = HTTParty.get "http://ipinfo.io"
     json = JSON.parse(response.body)
     location = json["city"]
+    print location
     return location
   end
 
