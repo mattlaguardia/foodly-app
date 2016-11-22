@@ -18,6 +18,7 @@ skip_before_action :verify_authenticity_token, only: [:new, :create]
 	end
 
 	def create
+		p params
 		@amount = 9900
 		customer = Stripe::Customer.create(
 			:email => params[:stripeEmail],
