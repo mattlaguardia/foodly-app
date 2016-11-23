@@ -164,6 +164,8 @@ img.yelp-img {
   border-radius: 10px;
   padding-top: 5%;
   padding-bottom: 10%;
+  padding-right: 5%;
+  padding-left: 5%;
   position: relative;
 }
 
@@ -172,7 +174,7 @@ img.yelp-img {
   position: absolute;
   top: 25%;
   text-align: center;
-  margin-left: 20%;
+  margin-left: 25%;
   width: 50%;
 }
 
@@ -192,11 +194,50 @@ img.yelp-img {
   }
 }
 
-/*@media (max-width: 400px) {
-  #login-form {
-   margin-left: 0.5%;
+.sign-up-form-bg{
+  background-color: rgba(55, 51, 51, 0.7);
+  border-radius: 10px;
+  padding-top: 5%;
+  padding-bottom: 10%;
+  padding-right: 5%;
+  padding-left: 5%;
+  position: relative;
+}
+
+.sign-in-form {
+  color: white;
+  position: absolute;
+  top: 25%;
+  text-align: center;
+  margin-left: 25%;
+  width: 50%;
+}
+
+.sign-in-form-bg{
+  background-color: rgba(55, 51, 51, 0.7);
+  border-radius: 10px;
+  padding-top: 5%;
+  padding-bottom: 10%;
+  padding-right: 5%;
+  padding-left: 5%;
+  position: relative;
+}
+
+@media (max-width: 800px) {
+  .sign-in-form {
+   width: 80%;
+   margin-left: 10%;
+   margin-top: -20%
   }
-}*/
+}
+
+@media (max-width: 600px) {
+  .sign-in-form {
+   width: 80%;
+   margin-left: 10%;
+   margin-top: -20%
+  }
+}
 
 
 
