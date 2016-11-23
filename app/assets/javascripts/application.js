@@ -20,18 +20,9 @@
 $(document).ready(function(){
   $(".button-collapse").sideNav();
   $('.parallax').parallax();
-  $(function(){
-    $(".like-button").on("click", function(event){
-      console.log("Swiped!")
-    });
-  })
-  $(function(){
-    $(".dislike-button").on("click", function(event){
-     console.log("Swiped!")
-    });
-  })
-  // AJAX CALL TO RENDER IN REAL TIME WITHOUT A PAGE REFRESH //
-})
+});
+
+// AJAX CALL TO RENDER IN REAL TIME WITHOUT A PAGE REFRESH //
 var likes = $(".likes-count").text();
 console.log(likes);
 var dislikes = $(".dislikes-count").text();

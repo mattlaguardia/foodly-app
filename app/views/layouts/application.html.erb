@@ -15,14 +15,15 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-  <nav class="z-depth-0">
+  <nav class="z-depth-0 teal lighten-2">
     <div class="nav-wrapper z-depth-0">
       <div id="logoDiv">
-      <a href="/" class="brand-logo">foodly</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="/" class="brand-logo left">foodly</a>
+      <!-- <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a> -->
       </div>
-      <ul class="right hide-on-med-and-down">
-          <li><a href="/aboutus">About Us</a></li>
+      <ul class="right">
+          <!-- <li><a href="/aboutus">About Us</a></li> -->
+          <!-- <li class="hide-on-lg"><a href="/">Home</a></li> -->
         <% if current_user %>
           <li><a href="/users/<%= current_user.id %>">Profile</a></li>
           <li><a href="/restaurants">Restaurants</a></li>
@@ -61,6 +62,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
+<script type="text/javascript">
+  (function($){
+    $(function(){
+      $('.button-collapse').sideNav();
+    }); // end of document ready
+  })(jQuery); // end of jQuery name space
+</script>
 </body>
 
 </html>
