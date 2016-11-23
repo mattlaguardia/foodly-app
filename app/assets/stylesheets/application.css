@@ -16,6 +16,11 @@
 
 #aboutus{
   padding-top: 30px;
+  color: white;
+}
+
+.about-us-content{
+  color: white;
 }
 
 nav {
@@ -192,16 +197,19 @@ form.button_to{
   background-attachment: fixed;
   max-width: 100%;
 }
+
 #aboutuspage{
- background-color: rgba(55, 51, 51, 0.7);
+ background-color: rgba(55, 51, 51, 0.8);
  border-radius: 20px;
  padding-bottom: 10px;
- padding-left: 10px;
- padding-right: 10px
+ padding-left: 50%;
+ padding-right: 10px;
+ text-align: center;
+
 }
 
 #contactpage{
- background-color: rgba(55, 51, 51, 0.7);
+ background-color: rgba(55, 51, 51, 0.8);
  border-radius: 20px;
  padding-bottom: 10px;
  padding-left: 10px;
