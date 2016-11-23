@@ -124,6 +124,7 @@ img.yelp-img {
 #res-card {
   align-items: center;
 }
+
 #login-form {
   color: white;
   position: absolute;
@@ -157,6 +158,45 @@ img.yelp-img {
   padding-bottom: 10%;
   position: relative;
 }
+
+.sign-up-form-bg{
+  background-color: rgba(55, 51, 51, 0.7);
+  border-radius: 10px;
+  padding-top: 5%;
+  padding-bottom: 10%;
+  position: relative;
+}
+
+.sign-up-form {
+  color: white;
+  position: absolute;
+  top: 25%;
+  text-align: center;
+  margin-left: 20%;
+  width: 50%;
+}
+
+@media (max-width: 800px) {
+  .sign-up-form {
+   width: 80%;
+   margin-left: 10%;
+   margin-top: -20%
+  }
+}
+
+@media (max-width: 600px) {
+  .sign-up-form {
+   width: 80%;
+   margin-left: 10%;
+   margin-top: -20%
+  }
+}
+
+/*@media (max-width: 400px) {
+  #login-form {
+   margin-left: 0.5%;
+  }
+}*/
 
 
 
