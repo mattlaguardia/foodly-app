@@ -78,10 +78,10 @@ img.yelp-img {
   padding-bottom: 10px;
   color: white;
 }
-.bg-image-edit {
+/*.bg-image-edit {
   background: url(food-on-table.jpg) no-repeat center center fixed;
   background-size: cover;
-}
+}*/
 .pie-graph {
   display: block;
   margin: 0 auto;
@@ -128,7 +128,7 @@ img.yelp-img {
   color: white;
   position: absolute;
   top: 25%;
-  left: 25%;
+  left: 15%;
 }
 
 #login-form-bg {
@@ -151,6 +151,7 @@ img.yelp-img {
 #login-submit {
   background-color: #327D8F;
 }
+
 #login-bg-image {
   background: url(food-on-table.jpg) no-repeat center center fixed;
   background-size: cover;
@@ -159,7 +160,9 @@ img.yelp-img {
 #users-index-bg-image{
   background: url(http://freshandfitvancouver.com/wp-content/uploads/2016/03/bigstock-Food-Table-Healthy-Delicious-O-92994914.jpg) no-repeat center center fixed;
   background-size: cover;
+  height: 600px;
 }
+
 #signup {
   background-color: #1D374F;
 }
@@ -180,23 +183,23 @@ nav .brand-logo {
   clear: both;
 }
 
-.new-user-bg-image{
+/*.new-user-bg-image{
   background: url(food-on-table.jpg) no-repeat center center fixed;
   background-size: cover;
   height: 1000px;
-}
+}*/
 
 form.button_to{
   margin: auto 0;
 }
 
-#supreme-bg-image{
+/*#supreme-bg-image{
   background: url(https://www.bonappetour.com/assets/images/experiences/1447095355-9619536.jpeg) no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   max-width: 100%;
-}
+}*/
 
 #aboutuspage{
  background-color: rgba(55, 51, 51, 0.8);
@@ -290,4 +293,8 @@ body{
 .restaurant-title{
   color: white;
   text-shadow: 2px 1px black;
+}
+
+.sign-up-title{
+  text-align: center;
 }
