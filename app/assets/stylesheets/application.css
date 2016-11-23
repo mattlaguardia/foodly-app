@@ -128,7 +128,8 @@ img.yelp-img {
   color: white;
   position: absolute;
   top: 25%;
-  left: 15%;
+  left: 25%;
+  text-align: center;
 }
 
 #login-form-bg {
@@ -157,11 +158,11 @@ img.yelp-img {
   background-size: cover;
 }*/
 
-/*#users-index-bg-image{
+#users-index-bg-image{
   background: url(http://freshandfitvancouver.com/wp-content/uploads/2016/03/bigstock-Food-Table-Healthy-Delicious-O-92994914.jpg) no-repeat center center fixed;
   background-size: cover;
   height: 600px;
-}*/
+}
 
 #signup {
   background-color: #1D374F;
@@ -177,11 +178,11 @@ nav .brand-logo {
   padding-left: 25px;
 }
 
-#login-button{
+/*#login-button{
   float: right;
   align: right;
   clear: both;
-}
+}*/
 
 /*.new-user-bg-image{
   background: url(food-on-table.jpg) no-repeat center center fixed;

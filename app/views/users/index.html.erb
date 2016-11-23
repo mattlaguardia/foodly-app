@@ -1,19 +1,20 @@
 
   <div id="users-index-bg-image"></div>
-<div class="container row" id="login-form">
-  <div class="col s12" id="login-form-bg">
+<div class="col s12 m6" id="login-form">
+  <div class="" id="login-form-bg">
     <h2 class="sign-up-title"> WELCOME TO FOODLY! </h2>
-    <div class="row">
-      <div class="col 12">
+    <div class="">
+      <div class="">
         <p> New user? Create an account! </p>
       </div>
-      <div class="col 12">
+      <div class="">
         <%= button_to "Signup", new_user_path, method: "get", class: "btn", id: "signup-button" %>
       </div>
-      <div class="col 12">
+      <br>
+      <div class="">
         <p> Already have an account? Sign in! </p>
       </div>
-      <div class="col s12">
+      <div class="">
         <%= button_to "Login", login_path, method: "get", class: "btn", id: "login-button" %>
       </div>
     </div>
