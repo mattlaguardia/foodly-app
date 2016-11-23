@@ -1,5 +1,6 @@
+<div class="restaurant-index-wrapper">
 <div class="container">
-  <h2 align="center"> Connect to Food Near By!</h2>
+  <h2 class="restaurant-title" align="center"> Connect to Food Near By!</h2>
     <% @restaurants.each do |res| %>
       <% if !current_user.restaurant_likes.include?(res) && !current_user.restaurant_dislikes.include?(res) %>
         <% if res.yelp != current_user.restaurant_likes %>
@@ -46,4 +47,4 @@
     <% end %>
   <% end %>
 </div>
-<br>
+</div>

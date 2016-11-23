@@ -46,6 +46,7 @@ img.yelp-img {
 .swipe-card {
   border: 1px solid #c5c3c3;
   text-align: center;
+  background-color: white;
 }
 .swiped {
   background-color: red;
@@ -271,4 +272,14 @@ form.button_to{
 }
 .card-img {
   width: 300px;
+}
+
+body{
+  background-color: #1d374f;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
+}
+
+.restaurant-title{
+  color: white;
+  text-shadow: 2px 1px black;
 }
